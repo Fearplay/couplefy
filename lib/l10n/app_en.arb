@@ -1,0 +1,73 @@
+{
+  "@@locale": "en",
+  "appName": "Love Counter",
+  "loveCounterHomePageTitle": "Love Counter",
+  "nameDayHomePageTitle": "Name Day",
+  "nameDayHomePage": "Today is {day}.{month}. and the name day is celebrated by",
+  "@nameDayHomePage": {
+    "placeholders": {
+      "day": {},
+      "month": {}
+    }
+  },
+  "quoteHomePageTitle": "Quote",
+  "homeTabName": "Home",
+  "loveTabName": "Love Counter",
+  "nameDayTabName": "Name Days",
+  "quotesTabName": "Quotes",
+  "settingsTabName": "Settings",
+  "settingsNameTitle": "Names",
+  "firstNameHint": "Enter your name",
+  "secondNameHint": "Enter second name",
+  "quoteButton": "New Quote",
+  "saveButton": "Save",
+  "namesFallback": "You need to update both names in the settings!",
+  "@namesFallback": {
+    "description": "User didn't choose both names"
+  },
+  "snackBarNames": "Both names must be filled!",
+  "settingsDateTitle": "Start Date",
+  "dateLabel": "Date",
+  "yearsText": "{countYears, plural, one{{countYears} year} other{{countYears} years}}",
+  "@yearsText": {
+    "description": "New messages count on the Home screen",
+    "placeholders": {
+      "countYears": {}
+    }
+  },
+  "monthsText": "{countMonths, plural, one{{countMonths} month} other{{countMonths} months}}",
+  "@monthsText": {
+    "description": "New messages count on the Home screen",
+    "placeholders": {
+      "countMonths": {}
+    }
+  },
+  "weeksText": "{countWeeks, plural, one{{countWeeks} week} other{{countWeeks} weeks}}",
+  "@weeksText": {
+    "description": "New messages count on the Home screen",
+    "placeholders": {
+      "countWeeks": {}
+    }
+  },
+  "daysText": "{countDays, plural, one{{countDays} day} other{{countDays} days}}",
+  "@daysText": {
+    "description": "New messages count on the Home screen",
+    "placeholders": {
+      "countDays": {}
+    }
+  },
+  "darkModeText": "Dark Mode",
+  "showOnlyDaysText": "Days only",
+  "appLanguageText": "Language",
+  "appLanguageMenuLabel": "Language",
+  "appMenuItemEnglish": "English",
+  "appMenuItemCzech": "Czech",
+  "infoButton": "About App",
+
+  "homeButtonNavigation": "Home",
+  "loveButtonNavigation": "Love",
+  "nameDayButtonNavigation": "Name Days",
+  "quotesButtonNavigation": "Quotes",
+  "settingsButtonNavigation": "Settings"
+
+}

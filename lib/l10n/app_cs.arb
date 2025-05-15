@@ -1,0 +1,72 @@
+{
+  "@@locale": "cs",
+  "appName": "Love Counter",
+  "loveCounterHomePageTitle": "Počítadlo Lásky",
+  "nameDayHomePageTitle": "Svátek",
+   "nameDayHomePage": "Dnes je {day}.{month}. a svátek slaví",
+  "@nameDayHomePage": {
+    "placeholders": {
+      "day": {},
+      "month": {}
+    }
+  },
+  "quoteHomePageTitle": "Citát",
+  "homeTabName": "Domovská Stránka",
+  "loveTabName": "Počítadlo Lásky",
+  "nameDayTabName": "Svátky",
+  "quotesTabName": "Citáty",
+  "settingsTabName": "Nastavení",
+  "settingsNameTitle": "Jména",
+  "firstNameHint": "Zadej své jméno",
+  "secondNameHint": "Zadej jméno druhé osoby",
+  "quoteButton": "Nový Citát",
+  "saveButton": "Uložit",
+  "namesFallback": "Musíš zadat obě jména v nastavení!",
+  "@namesFallback": {
+    "description": "Uživatel nevybral obě jména"
+  },
+  "snackBarNames": "Obě jména musí být vyplněná!",
+  "settingsDateTitle": "Začátek data",
+  "dateLabel": "Datum",
+  "yearsText": "{countYears, plural,one{{countYears} rok} few{{countYears} roky} other{{countYears} let}}",
+  "@yearsText": {
+    "description": "New messages count on the Home screen",
+    "placeholders": {
+      "countYears": {}
+    }
+  },
+  "monthsText": "{countMonths, plural,one{{countMonths} měsíc} few{{countMonths} měsíce} other{{countMonths} měsíců}}",
+  "@monthsText": {
+    "description": "New messages count on the Home screen",
+    "placeholders": {
+      "countMonths": {}
+    }
+  },
+  "weeksText": "{countWeeks, plural,one{{countWeeks} týden} few{{countWeeks} týdny} other{{countWeeks} týdnů}}",
+  "@weeksText": {
+    "description": "New messages count on the Home screen",
+    "placeholders": {
+      "countWeeks": {}
+    }
+  },
+  "daysText": "{countDays, plural,one{{countDays} den} few{{countDays} dny} other{{countDays} dnů}}",
+  "@daysText": {
+    "description": "New messages count on the Home screen",
+    "placeholders": {
+      "countDays": {}
+    }
+  },
+    "darkModeText": "Dark Mode",
+  "showOnlyDaysText": "Jen dny",
+  "appLanguageText": "Jazyk",
+    "appLanguageMenuLabel": "Jazyk",
+  "appMenuItemEnglish": "Angličtina",
+  "appMenuItemCzech": "Čeština",
+  "infoButton": "O aplikaci",
+
+    "homeButtonNavigation": "Domů",
+  "loveButtonNavigation": "Láska",
+  "nameDayButtonNavigation": "Svátky",
+  "quotesButtonNavigation": "Citáty",
+  "settingsButtonNavigation": "Nastavení"
+}

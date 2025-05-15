@@ -1,0 +1,105 @@
+import 'package:flutter/material.dart';
+import 'package:couplefy/theme/app_text_styles.dart';
+import 'package:couplefy/utils/date_picker_utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class LoveDuration extends StatefulWidget {
+  const LoveDuration({super.key});
+
+  @override
+  State<LoveDuration> createState() => _LoveDurationState();
+}
+
+class _LoveDurationState extends State<LoveDuration> {
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<bool>(
+      valueListenable: DatePickerUtils.showOnlyDays,
+      builder: (context, showOnlyDays, _) {
+        if (showOnlyDays) {
+          return Column(
+            children: [
+              Text("${DatePickerUtils.daysTogether(context)}",
+                  style: AppTextStyles.labelHomePageText(context)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
+                  Text(
+                    DatePickerUtils.wholeDate()!,
+                    style: AppTextStyles.labelHomePageText(context),
+                  ),
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
+                ],
+              ),
+            ],
+          );
+        } else {
+          return Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                // mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    "${DatePickerUtils.yearsTogether(context)[0]}",
+                    style: AppTextStyles.labelHomePageText(context),
+                  ),
+                  Text(
+                    "${DatePickerUtils.yearsTogether(context)[1]}",
+                    style: AppTextStyles.labelHomePageText(context),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "${DatePickerUtils.yearsTogether(context)[2]}",
+                    style: AppTextStyles.labelHomePageText(context),
+                  ),
+                  Text(
+                    "${DatePickerUtils.yearsTogether(context)[3]}",
+                    style: AppTextStyles.labelHomePageText(context),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
+                  Text(
+                    DatePickerUtils.wholeDate()!,
+                    style: AppTextStyles.labelHomePageText(context),
+                  ),
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
+                ],
+              )
+            ],
+          );
+        }
+
+        // final text = showOnlyDays
+        //     ? "${DatePickerUtils.daysTogether()} days Together"
+        //     : "${DatePickerUtils.yearsTogether()} Together";
+        //
+        // return Text(
+        //   text,
+        //   style: const TextStyle(fontSize: 28),
+        // );
+      },
+    );
+  }
+}
