@@ -14,12 +14,13 @@ class AboutRow extends StatelessWidget {
         TextButton(
           onPressed: () {
             showAboutDialog(
-                context: context,
-                applicationName: 'Couplefy',
-                applicationVersion: '1.0.0',
-                applicationLegalese: '© 2025 FairplayX',
-                applicationIcon: Image.asset('assets/images/app_icon.png',
-                    width: 48, height: 48));
+              context: context,
+              applicationName: 'Couplefy',
+              applicationVersion: '1.0.0',
+              applicationLegalese: '© 2025 FairplayX',
+              applicationIcon: Image.asset('assets/images/app_icon.png',
+                  width: 48, height: 48),
+            );
           },
           style: AppButtonStyles.aboutButton(context),
           child: Text(
@@ -31,7 +32,7 @@ class AboutRow extends StatelessWidget {
           width: 10,
         ),
         // Text(AppLocalizations.of(context)!.infoButton,          style: AppTextStyles.optionsText(context),),
-        Icon(Icons.info),
+        // Icon(Icons.info),
       ],
     );
   }

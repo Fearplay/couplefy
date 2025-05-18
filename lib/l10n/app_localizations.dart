@@ -164,13 +164,13 @@ abstract class AppLocalizations {
   /// No description provided for @firstNameHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter your name'**
+  /// **'Type your name'**
   String get firstNameHint;
 
   /// No description provided for @secondNameHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter second name'**
+  /// **'Type partner\'s name'**
   String get secondNameHint;
 
   /// No description provided for @quoteButton.

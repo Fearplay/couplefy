@@ -44,10 +44,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsNameTitle => 'Names';
 
   @override
-  String get firstNameHint => 'Enter your name';
+  String get firstNameHint => 'Type your name';
 
   @override
-  String get secondNameHint => 'Enter second name';
+  String get secondNameHint => 'Type partner\'s name';
 
   @override
   String get quoteButton => 'New Quote';
