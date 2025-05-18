@@ -21,24 +21,29 @@ class _LoveCounterImagePickState extends State<LoveCounterImagePick> {
     _userImage = SharedPreferencesUtils.userImage;
   }
 
-  Future<void> _pickImage() async {
-    final picker = ImagePicker();
-    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+Future<void> _pickImage() async {
+  final picker = ImagePicker();
+  final XFile? image = await picker.pickImage(
+    source: ImageSource.gallery,
+    maxWidth: 1080,
+    maxHeight: 1080,
+    imageQuality: 90,
+  );
 
-    if (image != null) {
-      final file = File(image.path);
+  if (image == null) return;
 
-      await SharedPreferencesUtils.saveUserImagePath(file.path);
-      if (!mounted) return;
-      _provider = FileImage(file);
+  final file = File(image.path);
+  await SharedPreferencesUtils.saveUserImagePath(file.path);
 
-      await precacheImage(_provider, context);
-      if (!mounted) return;
-      setState(() {
-        _userImage = file;
-      });
-    }
-  }
+
+  _provider = ResizeImage(FileImage(file), width: 800, height: 800);
+
+
+  await precacheImage(_provider, context);
+  if (!mounted) return;
+  setState(() => _userImage = file);
+}
+
 
   @override
   Widget build(BuildContext context) {

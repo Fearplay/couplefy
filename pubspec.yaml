@@ -69,7 +69,14 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-
+    - assets/fonts/
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/Ubuntu-Bold.ttf
+    - family: BadScript
+      fonts:
+        - asset: assets/fonts/BadScript-Regular.ttf
 
   #staci zadat launch_background
 flutter_native_splash:

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyles {
   static TextStyle tabName(BuildContext context) {
@@ -59,21 +59,19 @@ class AppTextStyles {
   }
 
   static TextStyle loveScreenTitleText(BuildContext context) {
-    return GoogleFonts.ubuntu(
-      textStyle: const TextStyle(
-        // color: Theme.of(context).colorScheme.onPrimary,
-        fontSize: 32,
+    return TextStyle(
+      // color: Theme.of(context).colorScheme.onPrimary,
+      fontFamily: 'Ubuntu',
+      fontSize: 32,
 
-        fontWeight: FontWeight.bold,
-      ),
+      // fontWeight: FontWeight.bold,
     );
   }
 
   static TextStyle quoteScreenText(BuildContext context) {
-    return GoogleFonts.badScript(
-      textStyle: const TextStyle(
-        fontSize: 32,
-      ),
+    return const TextStyle(
+      fontFamily: 'BadScript',
+      fontSize: 32,
     );
   }
 
@@ -85,10 +83,9 @@ class AppTextStyles {
   }
 
   static TextStyle quoteHomePageText(BuildContext context) {
-    return GoogleFonts.badScript(
-      textStyle: const TextStyle(
-        fontSize: 28,
-      ),
+    return const TextStyle(
+      fontSize: 28,
+      fontFamily: 'BadScript',
     );
   }
 
@@ -105,13 +102,14 @@ class AppTextStyles {
       // fontSize: 15
     );
   }
+
   static TextStyle todayNameDayRow(BuildContext context) {
     return const TextStyle(
-      fontWeight: FontWeight.bold,
-      color: Colors.black
+      fontWeight: FontWeight.bold, color: Colors.black,
       // fontSize: 15
     );
   }
+
   static TextStyle optionsText(BuildContext context) {
     return TextStyle(
       fontSize: 32,
