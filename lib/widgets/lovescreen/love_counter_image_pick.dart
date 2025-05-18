@@ -12,16 +12,14 @@ class LoveCounterImagePick extends StatefulWidget {
 }
 
 class _LoveCounterImagePickState extends State<LoveCounterImagePick> {
-   File? _userImage;
-
+  File? _userImage;
+  late ImageProvider _provider;
 
   @override
   void initState() {
     super.initState();
     _userImage = SharedPreferencesUtils.userImage;
   }
-
-
 
   Future<void> _pickImage() async {
     final picker = ImagePicker();
@@ -31,8 +29,11 @@ class _LoveCounterImagePickState extends State<LoveCounterImagePick> {
       final file = File(image.path);
 
       await SharedPreferencesUtils.saveUserImagePath(file.path);
+      if (!mounted) return;
+      _provider = FileImage(file);
 
-
+      await precacheImage(_provider, context);
+      if (!mounted) return;
       setState(() {
         _userImage = file;
       });
@@ -41,7 +42,6 @@ class _LoveCounterImagePickState extends State<LoveCounterImagePick> {
 
   @override
   Widget build(BuildContext context) {
-
     return GestureDetector(
       onTap: _pickImage,
       child: ClipRRect(

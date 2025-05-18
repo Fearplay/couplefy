@@ -44,10 +44,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get settingsNameTitle => 'Jména';
 
   @override
-  String get firstNameHint => 'Zadej své jméno';
+  String get firstNameHint => 'Zadejte své jméno';
 
   @override
-  String get secondNameHint => 'Zadej jméno druhé osoby';
+  String get secondNameHint => 'Zadejte jméno partnera';
 
   @override
   String get quoteButton => 'Nový Citát';
@@ -116,7 +116,7 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get darkModeText => 'Dark Mode';
+  String get darkModeText => 'Tmavý režim';
 
   @override
   String get showOnlyDaysText => 'Jen dny';

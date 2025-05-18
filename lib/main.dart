@@ -17,7 +17,6 @@ SystemChrome.setPreferredOrientations([
   await SharedPreferencesUtils.init();
   // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.top]);
   // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-  await Future.delayed(Duration(seconds: 3));
   runApp(MyApp());
 }
 

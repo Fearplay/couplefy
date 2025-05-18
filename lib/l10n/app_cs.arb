@@ -17,8 +17,8 @@
   "quotesTabName": "Citáty",
   "settingsTabName": "Nastavení",
   "settingsNameTitle": "Jména",
-  "firstNameHint": "Zadej své jméno",
-  "secondNameHint": "Zadej jméno druhé osoby",
+  "firstNameHint": "Zadejte své jméno",
+  "secondNameHint": "Zadejte jméno partnera",
   "quoteButton": "Nový Citát",
   "saveButton": "Uložit",
   "namesFallback": "Musíš zadat obě jména v nastavení!",
@@ -56,7 +56,7 @@
       "countDays": {}
     }
   },
-    "darkModeText": "Dark Mode",
+    "darkModeText": "Tmavý režim",
   "showOnlyDaysText": "Jen dny",
   "appLanguageText": "Jazyk",
     "appLanguageMenuLabel": "Jazyk",
