@@ -50,6 +50,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get secondNameHint => 'Type partner\'s name';
 
   @override
+  String get dateWriteHint => 'mm/dd/yyyy';
+
+  @override
   String get quoteButton => 'New Quote';
 
   @override
@@ -62,10 +65,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get snackBarNames => 'Both names must be filled!';
 
   @override
+  String get snackBarSave => 'Names were saved!';
+
+  @override
   String get settingsDateTitle => 'Start Date';
 
   @override
   String get dateLabel => 'Date';
+
+  @override
+  String get datePickerHintText => 'Select date';
 
   @override
   String yearsText(num countYears) {
@@ -116,6 +125,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get showOnlyDaysText => 'Days only';
+
+  @override
+  String get startFromZeroText => 'Start from zero';
 
   @override
   String get appLanguageText => 'Language';

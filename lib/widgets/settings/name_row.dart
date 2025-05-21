@@ -68,6 +68,19 @@ class _NameRowState extends State<NameRow> {
       LoveCounterUtils.secondPersonName = _secondPersonName.text;
       _savedNames = [_firstPersonName.text, _secondPersonName.text];
       await SharedPreferencesUtils.setNames(_savedNames);
+      if (!mounted) return;
+            ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            AppLocalizations.of(context)!.snackBarSave,
+            style: AppTextStyles.snackBarNames(context),
+            textAlign: TextAlign.center,
+          ),
+          backgroundColor: Theme.of(context).colorScheme.tertiary,
+          padding: EdgeInsets.all(20),
+          duration: Duration(seconds: 1),
+        ),
+      );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

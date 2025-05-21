@@ -13,52 +13,48 @@ import 'package:couplefy/utils/shared_preferences_utils.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
   static Locale? language;
 
-  static _MyAppState? of(BuildContext context) =>
-      context.findAncestorStateOfType<_MyAppState>();
-
+  static MyAppState? of(BuildContext context) =>
+      context.findAncestorStateOfType<MyAppState>();
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyApp> createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
 
-      MyApp.language = Locale(SharedPreferencesUtils.selectedValue ?? "en");
-
+    MyApp.language = Locale(SharedPreferencesUtils.selectedValue ?? "en");
   }
-
 
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
       valueListenable: SharedPreferencesUtils.darkMode,
-      builder: (context, darkMode, _){
-return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        locale: MyApp.language,
-        supportedLocales: const [
-          Locale('en'),
-          Locale('cs'),
-        ],
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        theme: appThemeLight,
-        darkTheme: appThemeDark,
-        themeMode:darkMode ?
-            ThemeMode.dark :
-            ThemeMode.light,
-        title: 'Couplefy',
-        home: MainLayout(),
-      );
+      builder: (context, darkMode, _) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          locale: MyApp.language,
+          supportedLocales: const [
+            Locale('en'),
+            Locale('cs'),
+          ],
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          theme: appThemeLight,
+          darkTheme: appThemeDark,
+          themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
+          title: 'Couplefy',
+          home: MainLayout(),
+        );
       },
     );
   }

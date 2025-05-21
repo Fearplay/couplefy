@@ -1,10 +1,10 @@
 import 'dart:ffi';
 
+import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/app.dart';
 import 'package:couplefy/l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
-
 
 class DatePickerUtils {
   static String? loveDate;
@@ -17,6 +17,8 @@ class DatePickerUtils {
   }) async {
     return await showDatePicker(
         context: context,
+        keyboardType: TextInputType.text,
+        fieldHintText: AppLocalizations.of(context)!.dateWriteHint,
         firstDate: DateTime(1900),
         lastDate: DateTime.now(),
         initialDate:
@@ -65,19 +67,45 @@ class DatePickerUtils {
     return 0;
   }
 
+  static String? startFromZero(BuildContext context, int number){
+          if (loveDate != null) {
+        return AppLocalizations.of(context)!.daysText(differenceDays()+number);
+        // return differenceDays() == 1
+        //     ? "${differenceDays().toString()} day Together"
+        //     : "${differenceDays().toString()} days Together";
+      }
+      return AppLocalizations.of(context)!.daysText(0);
+  }
+
+
+
+
+
   static String? daysTogether(BuildContext context) {
-    if (loveDate != null) {
-      return AppLocalizations.of(context)!.daysText(differenceDays());
-      // return differenceDays() == 1
-      //     ? "${differenceDays().toString()} day Together"
-      //     : "${differenceDays().toString()} days Together";
+    if (SharedPreferencesUtils.startFromZero.value == true) {
+      // if (loveDate != null) {
+      //   return AppLocalizations.of(context)!.daysText(differenceDays());
+      //   // return differenceDays() == 1
+      //   //     ? "${differenceDays().toString()} day Together"
+      //   //     : "${differenceDays().toString()} days Together";
+      // }
+      // return AppLocalizations.of(context)!.daysText(0);
+      return startFromZero(context, 0);
+    } else {
+      // if (loveDate != null) {
+      //   return AppLocalizations.of(context)!.daysText(differenceDays() + 1);
+      //   // return differenceDays() == 1
+      //   //     ? "${differenceDays().toString()} day Together"
+      //   //     : "${differenceDays().toString()} days Together";
+      // }
+      // return AppLocalizations.of(context)!.daysText(0);
+      return startFromZero(context, 1);
     }
-    return AppLocalizations.of(context)!.daysText(0);
   }
 
   static int _daysToYears() {
     int? days = differenceDays();
-    double year = days! / 365.25;
+    double year = days / 365.25;
 
     return year.floor();
   }
@@ -131,37 +159,28 @@ class DatePickerUtils {
 //
 //   }
 // }
-static List<dynamic> _countOfYears() {
+  static List<dynamic> _countOfYears() {
     final datePick = initialDateShowPicker();
     int years = todayDate.year - datePick.year;
-  int months = todayDate.month - datePick.month;
-  int days = todayDate.day - datePick.day;
+    int months = todayDate.month - datePick.month;
+    int days = todayDate.day - datePick.day;
 
-  if (days < 0) {
-    months -= 1;
-    final prevMonth = DateTime(todayDate.year, todayDate.month, 0);
-    days += prevMonth.day;
+    if (days < 0) {
+      months -= 1;
+      final prevMonth = DateTime(todayDate.year, todayDate.month, 0);
+      days += prevMonth.day;
+    }
+
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+    int weeks = days ~/ 7;
+    days = days % 7;
+    return [years, months, weeks, days];
   }
-
-  if (months < 0) {
-    years -= 1;
-    months += 12;
-  }
-  int weeks = days ~/ 7;
-  days = days % 7;
-  return [years, months, weeks, days];
-
-  }
-
-
 
   static List<dynamic> yearsTogether(BuildContext context) {
-
-
-
-
-
-
     if (loveDate != null) {
       return [
         AppLocalizations.of(context)!.yearsText(_countOfYears()[0]),

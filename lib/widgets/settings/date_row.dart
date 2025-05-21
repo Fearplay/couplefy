@@ -61,6 +61,7 @@ class _DateRowState extends State<DateRow> {
             controller: _dateController,
             decoration: InputDecoration(
               labelText: AppLocalizations.of(context)!.dateLabel,
+              hintText: AppLocalizations.of(context)!.datePickerHintText,
               labelStyle: AppTextStyles.hintText(context),
               filled: true,
               fillColor: Theme.of(context).colorScheme.secondaryContainer,

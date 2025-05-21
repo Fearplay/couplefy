@@ -10,6 +10,7 @@ class AppColors{
   static Color primaryFixedLight = Color(0xFFE6E6FA);
   static Color secondaryFixedLight = Color(0xFFDDA0DD);
   static Color errorLight = Colors.red.shade900;
+  static Color tertiaryLight = Colors.green; //SnackBar Success
   static const Color onErrorLight = Colors.white;
   static const Color surfaceTintLight = Colors.transparent;
   static const Color selectedItemColorLight = Colors.white;
@@ -28,6 +29,7 @@ class AppColors{
   static Color primaryFixedDark = Color(0xFF2A2A72);
   static Color secondaryFixedDark = Color(0xFF9D4EDD);
   static Color errorDark = Colors.red.shade900;
+  static Color tertiaryDark = Colors.greenAccent.shade700; //SnackBar Success
   static const Color onErrorDark = Colors.white;
   static const Color surfaceTintDark = Colors.transparent;
   static const Color selectedItemColorDark = Colors.white;

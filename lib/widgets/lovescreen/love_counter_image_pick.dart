@@ -38,9 +38,9 @@ Future<void> _pickImage() async {
 
   _provider = ResizeImage(FileImage(file), width: 800, height: 800);
 
-
+if (!mounted) return;
   await precacheImage(_provider, context);
-  if (!mounted) return;
+
   setState(() => _userImage = file);
 }
 

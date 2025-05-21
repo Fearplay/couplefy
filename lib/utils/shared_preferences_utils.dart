@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesUtils{
   static final ValueNotifier<bool> darkMode = ValueNotifier<bool>(true);
+  static final ValueNotifier<bool> startFromZero = ValueNotifier<bool>(true);
   static File? userImage;
   static String? selectedValue;
   static Future<void> init() async {
@@ -30,6 +31,7 @@ class SharedPreferencesUtils{
     // SWITCH
     DatePickerUtils.showOnlyDays.value = prefs.getBool('showOnlyDays') ?? true;
     darkMode.value = prefs.getBool('darkMode') ?? false;
+    startFromZero.value = prefs.getBool('startFromZero') ?? true;
 
 
     // DatePickerUtils.showOnlyDays.value = prefs.getBool('showOnlyDays') ?? false;
@@ -79,6 +81,11 @@ static Future<void> saveUserImagePath(String path) async {
 static Future<void> setShowOnlyDays(bool value) async {
   final prefs = await SharedPreferences.getInstance();
   await prefs.setBool("showOnlyDays", value);
+}
+
+static Future<void> setStartFromZero(bool value) async {
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.setBool("startFromZero", value);
 }
 
 static Future<void> setDarkMode(bool value) async {
