@@ -50,6 +50,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get secondNameHint => 'Zadejte jméno partnera';
 
   @override
+  String get dateWriteHint => 'mm/dd/rrrr';
+
+  @override
   String get quoteButton => 'Nový Citát';
 
   @override
@@ -62,10 +65,16 @@ class AppLocalizationsCs extends AppLocalizations {
   String get snackBarNames => 'Obě jména musí být vyplněná!';
 
   @override
+  String get snackBarSave => 'Jména byla uložena!';
+
+  @override
   String get settingsDateTitle => 'Začátek data';
 
   @override
   String get dateLabel => 'Datum';
+
+  @override
+  String get datePickerHintText => 'Vyberte datum';
 
   @override
   String yearsText(num countYears) {
@@ -120,6 +129,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get showOnlyDaysText => 'Jen dny';
+
+  @override
+  String get startFromZeroText => 'Začít od nuly';
 
   @override
   String get appLanguageText => 'Jazyk';

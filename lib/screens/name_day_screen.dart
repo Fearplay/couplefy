@@ -24,8 +24,6 @@ class _NameDayScreenState extends State<NameDayScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(savedLanguage);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -19,6 +19,7 @@
   "settingsNameTitle": "Names",
   "firstNameHint": "Type your name",
   "secondNameHint": "Type partner's name",
+  "dateWriteHint": "mm/dd/yyyy",
   "quoteButton": "New Quote",
   "saveButton": "Save",
   "namesFallback": "You need to update both names in the settings!",
@@ -26,8 +27,10 @@
     "description": "User didn't choose both names"
   },
   "snackBarNames": "Both names must be filled!",
+  "snackBarSave": "Names were saved!",
   "settingsDateTitle": "Start Date",
   "dateLabel": "Date",
+  "datePickerHintText" : "Select date",
   "yearsText": "{countYears, plural, one{{countYears} year} other{{countYears} years}}",
   "@yearsText": {
     "description": "New messages count on the Home screen",
@@ -58,6 +61,7 @@
   },
   "darkModeText": "Dark Mode",
   "showOnlyDaysText": "Days only",
+  "startFromZeroText": "Start from zero",
   "appLanguageText": "Language",
   "appLanguageMenuLabel": "Language",
   "appMenuItemEnglish": "English",

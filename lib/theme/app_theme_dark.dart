@@ -12,7 +12,7 @@ ThemeData appThemeDark = ThemeData(
     secondaryContainer: AppColors.secondaryContainerDark,
     primaryFixed: AppColors.primaryFixedDark,
     secondaryFixed: AppColors.secondaryFixedDark,
-    // tertiary: AppColors.tertiaryDark,
+    tertiary: AppColors.tertiaryDark,
     error: AppColors.errorDark,
     onError: AppColors.onErrorDark,
     surfaceTint: AppColors.surfaceDark,

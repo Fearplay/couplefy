@@ -12,7 +12,7 @@ ThemeData appThemeLight = ThemeData(
     secondaryContainer: AppColors.secondaryContainerLight,
     primaryFixed: AppColors.primaryFixedLight,
     secondaryFixed: AppColors.secondaryFixedLight,
-    // tertiary: AppColors.tertiaryLight,
+    tertiary: AppColors.tertiaryLight,
     error: AppColors.errorLight,
     onError: AppColors.onErrorLight,
     surfaceTint: AppColors.surfaceTintLight,

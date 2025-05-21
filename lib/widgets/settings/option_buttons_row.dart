@@ -1,3 +1,4 @@
+import 'package:couplefy/widgets/settings/options/start_from_zero_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/widgets/settings/options/about_row.dart';
 import 'package:couplefy/widgets/settings/options/dark_mode_switch.dart';
@@ -12,17 +13,27 @@ class OptionButtonsRow extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const [
-         SizedBox(height: 20,),
-         DarkModeSwitch(),
-         SizedBox(height: 20,),
-         DaysOnlySwitch(),
-         SizedBox(height: 20,),
-         LanguageMenu(),
-                 SizedBox(height: 20,),
-AboutRow(),
-          ],
-        );
-
-
+        SizedBox(
+          height: 20,
+        ),
+        DarkModeSwitch(),
+        SizedBox(
+          height: 20,
+        ),
+        DaysOnlySwitch(),
+        SizedBox(
+          height: 20,
+        ),
+        StartFromZeroSwitch(),
+        SizedBox(
+          height: 20,
+        ),
+        LanguageMenu(),
+        SizedBox(
+          height: 20,
+        ),
+        AboutRow(),
+      ],
+    );
   }
 }
