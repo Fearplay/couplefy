@@ -56,7 +56,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get quoteButton => 'Nový Citát';
 
   @override
-  String get saveButton => 'Uložit';
+  String get saveButtonNames => 'Uložit jména';
+
+  @override
+  String get saveButtonDate => 'Uložit datum';
 
   @override
   String get namesFallback => 'Musíš zadat obě jména v nastavení!';
@@ -65,7 +68,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get snackBarNames => 'Obě jména musí být vyplněná!';
 
   @override
-  String get snackBarSave => 'Jména byla uložena!';
+  String get snackBarSaveNames => 'Jména byla uložena!';
+
+  @override
+  String get snackBarSaveDate => 'Datum bylo uloženo!';
 
   @override
   String get settingsDateTitle => 'Začátek data';
@@ -125,6 +131,9 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
+  String get settingsOptionsTitle => 'Možnosti';
+
+  @override
   String get darkModeText => 'Tmavý režim';
 
   @override
@@ -147,6 +156,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get infoButton => 'O aplikaci';
+
+  @override
+  String get supportButton => 'Buy me a coffee';
 
   @override
   String get homeButtonNavigation => 'Domů';

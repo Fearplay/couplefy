@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:couplefy/theme/app_button_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/utils/date_picker_utils.dart';
@@ -16,7 +17,7 @@ class DateRow extends StatefulWidget {
 
 class _DateRowState extends State<DateRow> {
   final TextEditingController _dateController = TextEditingController();
-  static const _prefsKey = 'loveDateMs';
+  DateTime? _selectedDate;
 
   @override
   void initState() {
@@ -31,17 +32,54 @@ class _DateRowState extends State<DateRow> {
   Future<void> _selectDate() async {
     DateTime? picked = await DatePickerUtils.selectDate(context: context);
     if (picked != null) {
-      DatePickerUtils.loveDate = picked.toString().split(" ")[0];
-      await SharedPreferencesUtils.setLoveDate(picked);
       setState(() {
-        // _dateController.text = picked.toString().split(" ")[0];
+        _selectedDate = picked;
         _dateController.text = DatePickerUtils.makeEuropeDate(picked)!;
-
-        // int timestamp = DatePickerUtils.loveDate as int;
-        // DatePickerUtils.loveDate = _dateController.text;
       });
     }
   }
+
+  Future<void> _saveDate() async {
+    if (_selectedDate != null) {
+      String selectedDateString =
+          _selectedDate!.toString().split(" ")[0]; // yyyy-MM-dd
+      if (!mounted) return;
+      FocusScope.of(context).unfocus();
+      if (DatePickerUtils.loveDate == selectedDateString) {
+        return;
+      }
+      DatePickerUtils.loveDate = selectedDateString;
+      await SharedPreferencesUtils.setLoveDate(_selectedDate!);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            AppLocalizations.of(context)!.snackBarSaveDate,
+            style: AppTextStyles.snackBarNames(context),
+            textAlign: TextAlign.center,
+          ),
+          backgroundColor: Theme.of(context).colorScheme.tertiary,
+          padding: EdgeInsets.all(20),
+          duration: Duration(seconds: 1),
+        ),
+      );
+    }
+  }
+
+  // Future<void> _selectDate() async {
+  //   DateTime? picked = await DatePickerUtils.selectDate(context: context);
+  //   if (picked != null) {
+  //     DatePickerUtils.loveDate = picked.toString().split(" ")[0];
+  //     await SharedPreferencesUtils.setLoveDate(picked);
+  //     setState(() {
+  //       // _dateController.text = picked.toString().split(" ")[0];
+  //       _dateController.text = DatePickerUtils.makeEuropeDate(picked)!;
+  //
+  //       // int timestamp = DatePickerUtils.loveDate as int;
+  //       // DatePickerUtils.loveDate = _dateController.text;
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -74,9 +112,29 @@ class _DateRowState extends State<DateRow> {
               ),
             ),
             readOnly: true,
-            onTap: () {
-              _selectDate();
-            },
+            onTap: _selectDate,
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 240), // ⟵ strop
+            child: FractionallySizedBox(
+              widthFactor: 0.8,
+              child: ElevatedButton(
+                onPressed: _saveDate,
+                style: AppButtonStyles.allButtons(context),
+                child: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: Text(
+                    AppLocalizations.of(context)!.saveButtonDate,
+                    style: AppTextStyles.buttonText(context),
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
       ],

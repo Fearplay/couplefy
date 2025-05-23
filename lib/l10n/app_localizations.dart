@@ -188,11 +188,17 @@ abstract class AppLocalizations {
   /// **'New Quote'**
   String get quoteButton;
 
-  /// No description provided for @saveButton.
+  /// No description provided for @saveButtonNames.
   ///
   /// In en, this message translates to:
-  /// **'Save'**
-  String get saveButton;
+  /// **'Save Names'**
+  String get saveButtonNames;
+
+  /// No description provided for @saveButtonDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Date'**
+  String get saveButtonDate;
 
   /// User didn't choose both names
   ///
@@ -206,11 +212,17 @@ abstract class AppLocalizations {
   /// **'Both names must be filled!'**
   String get snackBarNames;
 
-  /// No description provided for @snackBarSave.
+  /// No description provided for @snackBarSaveNames.
   ///
   /// In en, this message translates to:
   /// **'Names were saved!'**
-  String get snackBarSave;
+  String get snackBarSaveNames;
+
+  /// No description provided for @snackBarSaveDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date was saved!'**
+  String get snackBarSaveDate;
 
   /// No description provided for @settingsDateTitle.
   ///
@@ -253,6 +265,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{countDays, plural, one{{countDays} day} other{{countDays} days}}'**
   String daysText(num countDays);
+
+  /// No description provided for @settingsOptionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Options'**
+  String get settingsOptionsTitle;
 
   /// No description provided for @darkModeText.
   ///
@@ -301,6 +319,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'About App'**
   String get infoButton;
+
+  /// No description provided for @supportButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy me a coffee'**
+  String get supportButton;
 
   /// No description provided for @homeButtonNavigation.
   ///
