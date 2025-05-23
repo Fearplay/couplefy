@@ -21,13 +21,15 @@
   "secondNameHint": "Zadejte jméno partnera",
   "dateWriteHint": "mm/dd/rrrr",
   "quoteButton": "Nový Citát",
-  "saveButton": "Uložit",
+  "saveButtonNames": "Uložit jména",
+  "saveButtonDate": "Uložit datum",
   "namesFallback": "Musíš zadat obě jména v nastavení!",
   "@namesFallback": {
     "description": "Uživatel nevybral obě jména"
   },
   "snackBarNames": "Obě jména musí být vyplněná!",
-  "snackBarSave": "Jména byla uložena!",
+  "snackBarSaveNames": "Jména byla uložena!",
+  "snackBarSaveDate": "Datum bylo uloženo!",
   "settingsDateTitle": "Začátek data",
   "dateLabel": "Datum",
   "datePickerHintText" : "Vyberte datum",
@@ -59,6 +61,7 @@
       "countDays": {}
     }
   },
+  "settingsOptionsTitle": "Možnosti",
     "darkModeText": "Tmavý režim",
   "showOnlyDaysText": "Jen dny",
   "startFromZeroText": "Začít od nuly",
@@ -67,6 +70,7 @@
   "appMenuItemEnglish": "Angličtina",
   "appMenuItemCzech": "Čeština",
   "infoButton": "O aplikaci",
+  "supportButton": "Buy me a coffee",
 
     "homeButtonNavigation": "Domů",
   "loveButtonNavigation": "Láska",

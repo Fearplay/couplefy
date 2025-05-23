@@ -38,7 +38,6 @@ class _NameRowState extends State<NameRow> {
 
   void _setPrefs() {
     _prefs?.setStringList("loveNames", _savedNames);
-
   }
 
   // void _getPrefs() {
@@ -63,16 +62,20 @@ class _NameRowState extends State<NameRow> {
   // }
 
   void savedNames() async {
-    if (_firstPersonName.text.isNotEmpty && _secondPersonName.text.isNotEmpty) {
+    if (LoveCounterUtils.firstPersonName == _firstPersonName.text &&
+        LoveCounterUtils.secondPersonName == _secondPersonName.text) {
+//do nothing
+    } else if (_firstPersonName.text.isNotEmpty &&
+        _secondPersonName.text.isNotEmpty) {
       LoveCounterUtils.firstPersonName = _firstPersonName.text;
       LoveCounterUtils.secondPersonName = _secondPersonName.text;
       _savedNames = [_firstPersonName.text, _secondPersonName.text];
       await SharedPreferencesUtils.setNames(_savedNames);
       if (!mounted) return;
-            ScaffoldMessenger.of(context).showSnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            AppLocalizations.of(context)!.snackBarSave,
+            AppLocalizations.of(context)!.snackBarSaveNames,
             style: AppTextStyles.snackBarNames(context),
             textAlign: TextAlign.center,
           ),
@@ -153,7 +156,7 @@ class _NameRowState extends State<NameRow> {
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Text(
-                    AppLocalizations.of(context)!.saveButton,
+                    AppLocalizations.of(context)!.saveButtonNames,
                     style: AppTextStyles.buttonText(context),
                   ),
                 ),

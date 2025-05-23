@@ -56,7 +56,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quoteButton => 'New Quote';
 
   @override
-  String get saveButton => 'Save';
+  String get saveButtonNames => 'Save Names';
+
+  @override
+  String get saveButtonDate => 'Save Date';
 
   @override
   String get namesFallback => 'You need to update both names in the settings!';
@@ -65,7 +68,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get snackBarNames => 'Both names must be filled!';
 
   @override
-  String get snackBarSave => 'Names were saved!';
+  String get snackBarSaveNames => 'Names were saved!';
+
+  @override
+  String get snackBarSaveDate => 'Date was saved!';
 
   @override
   String get settingsDateTitle => 'Start Date';
@@ -121,6 +127,9 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get settingsOptionsTitle => 'Options';
+
+  @override
   String get darkModeText => 'Dark Mode';
 
   @override
@@ -143,6 +152,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get infoButton => 'About App';
+
+  @override
+  String get supportButton => 'Buy me a coffee';
 
   @override
   String get homeButtonNavigation => 'Home';

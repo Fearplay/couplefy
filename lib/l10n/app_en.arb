@@ -21,13 +21,15 @@
   "secondNameHint": "Type partner's name",
   "dateWriteHint": "mm/dd/yyyy",
   "quoteButton": "New Quote",
-  "saveButton": "Save",
+  "saveButtonNames": "Save Names",
+  "saveButtonDate": "Save Date",
   "namesFallback": "You need to update both names in the settings!",
   "@namesFallback": {
     "description": "User didn't choose both names"
   },
   "snackBarNames": "Both names must be filled!",
-  "snackBarSave": "Names were saved!",
+  "snackBarSaveNames": "Names were saved!",
+    "snackBarSaveDate": "Date was saved!",
   "settingsDateTitle": "Start Date",
   "dateLabel": "Date",
   "datePickerHintText" : "Select date",
@@ -59,6 +61,7 @@
       "countDays": {}
     }
   },
+    "settingsOptionsTitle": "Options",
   "darkModeText": "Dark Mode",
   "showOnlyDaysText": "Days only",
   "startFromZeroText": "Start from zero",
@@ -67,6 +70,7 @@
   "appMenuItemEnglish": "English",
   "appMenuItemCzech": "Czech",
   "infoButton": "About App",
+  "supportButton": "Buy me a coffee",
 
   "homeButtonNavigation": "Home",
   "loveButtonNavigation": "Love",

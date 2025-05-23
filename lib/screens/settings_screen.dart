@@ -21,7 +21,9 @@ class SettingsScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             children: const [
               NameRow(),
+              SizedBox(height: 10,),
               DateRow(),
+              SizedBox(height: 35,),
               OptionButtonsRow(),
 
             ],

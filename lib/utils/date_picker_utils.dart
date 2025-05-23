@@ -17,6 +17,7 @@ class DatePickerUtils {
   }) async {
     return await showDatePicker(
         context: context,
+        locale: const Locale('en'),
         keyboardType: TextInputType.text,
         fieldHintText: AppLocalizations.of(context)!.dateWriteHint,
         firstDate: DateTime(1900),
@@ -67,19 +68,15 @@ class DatePickerUtils {
     return 0;
   }
 
-  static String? startFromZero(BuildContext context, int number){
-          if (loveDate != null) {
-        return AppLocalizations.of(context)!.daysText(differenceDays()+number);
-        // return differenceDays() == 1
-        //     ? "${differenceDays().toString()} day Together"
-        //     : "${differenceDays().toString()} days Together";
-      }
-      return AppLocalizations.of(context)!.daysText(0);
+  static String? startFromZero(BuildContext context, int number) {
+    if (loveDate != null) {
+      return AppLocalizations.of(context)!.daysText(differenceDays() + number);
+      // return differenceDays() == 1
+      //     ? "${differenceDays().toString()} day Together"
+      //     : "${differenceDays().toString()} days Together";
+    }
+    return AppLocalizations.of(context)!.daysText(0);
   }
-
-
-
-
 
   static String? daysTogether(BuildContext context) {
     if (SharedPreferencesUtils.startFromZero.value == true) {

@@ -16,7 +16,7 @@ class AboutRow extends StatelessWidget {
             showAboutDialog(
               context: context,
               applicationName: 'Couplefy',
-              applicationVersion: '1.0.0',
+              applicationVersion: '1.5.0',
               applicationLegalese: '© 2025 FairplayX',
               applicationIcon: Image.asset('assets/images/app_icon.png',
                   width: 48, height: 48),

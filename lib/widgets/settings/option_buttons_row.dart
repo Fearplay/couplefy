@@ -1,4 +1,7 @@
+import 'package:couplefy/l10n/app_localizations.dart';
+import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/widgets/settings/options/start_from_zero_switch.dart';
+import 'package:couplefy/widgets/settings/options/support_me_row.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/widgets/settings/options/about_row.dart';
 import 'package:couplefy/widgets/settings/options/dark_mode_switch.dart';
@@ -11,28 +14,36 @@ class OptionButtonsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        SizedBox(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+                Text(
+          AppLocalizations.of(context)!.settingsOptionsTitle,
+          style: AppTextStyles.nameTextField(context),
+        ),
+        const SizedBox(
           height: 20,
         ),
-        DarkModeSwitch(),
-        SizedBox(
+        const DarkModeSwitch(),
+        const SizedBox(
           height: 20,
         ),
-        DaysOnlySwitch(),
-        SizedBox(
+        const DaysOnlySwitch(),
+        const SizedBox(
           height: 20,
         ),
-        StartFromZeroSwitch(),
-        SizedBox(
+        const StartFromZeroSwitch(),
+        const SizedBox(
           height: 20,
         ),
-        LanguageMenu(),
-        SizedBox(
+        const LanguageMenu(),
+        const SizedBox(
           height: 20,
         ),
-        AboutRow(),
+        const SupportMeRow(),
+        const SizedBox(
+          height: 20,
+        ),
+        const AboutRow(),
       ],
     );
   }
