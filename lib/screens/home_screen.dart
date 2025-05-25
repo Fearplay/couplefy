@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:couplefy/utils/tab_name_utils.dart';
 import 'package:couplefy/widgets/homepage/homepage_cards.dart';
-import 'package:couplefy/l10n/app_localizations.dart';
 
-
+/// Home Screen (in app third position)
 class HomeScreen extends StatefulWidget {
+  /// Creates an instance of [HomeScreen].
   const HomeScreen({super.key});
 
   @override
@@ -17,10 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        //Tab name of the screen
-        // TabNameUtils(AppLocalizations.of(context)!.homeTabName),
         Expanded(
           child: SingleChildScrollView(
+            // Widget with all home page cards
             child: HomepageCard(),
           ),
         ),

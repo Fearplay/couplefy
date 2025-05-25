@@ -3,7 +3,7 @@
   "appName": "Love Counter",
   "loveCounterHomePageTitle": "Počítadlo Lásky",
   "nameDayHomePageTitle": "Svátek",
-   "nameDayHomePage": "Dnes je {day}.{month}. a svátek slaví",
+  "nameDayHomePage": "Dnes je {day}.{month}. a svátek slaví",
   "@nameDayHomePage": {
     "placeholders": {
       "day": {},
@@ -32,47 +32,46 @@
   "snackBarSaveDate": "Datum bylo uloženo!",
   "settingsDateTitle": "Začátek data",
   "dateLabel": "Datum",
-  "datePickerHintText" : "Vyberte datum",
+  "datePickerHintText": "Vyberte datum",
   "yearsText": "{countYears, plural,one{{countYears} rok} few{{countYears} roky} other{{countYears} let}}",
   "@yearsText": {
-    "description": "New messages count on the Home screen",
+    "description": "Počítadlo roků",
     "placeholders": {
       "countYears": {}
     }
   },
   "monthsText": "{countMonths, plural,one{{countMonths} měsíc} few{{countMonths} měsíce} other{{countMonths} měsíců}}",
   "@monthsText": {
-    "description": "New messages count on the Home screen",
+    "description": "Počítadlo měsíců",
     "placeholders": {
       "countMonths": {}
     }
   },
   "weeksText": "{countWeeks, plural,one{{countWeeks} týden} few{{countWeeks} týdny} other{{countWeeks} týdnů}}",
   "@weeksText": {
-    "description": "New messages count on the Home screen",
+    "description": "Počítadlo týdnů",
     "placeholders": {
       "countWeeks": {}
     }
   },
   "daysText": "{countDays, plural,one{{countDays} den} few{{countDays} dny} other{{countDays} dnů}}",
   "@daysText": {
-    "description": "New messages count on the Home screen",
+    "description": "Počítadlo dnů",
     "placeholders": {
       "countDays": {}
     }
   },
   "settingsOptionsTitle": "Možnosti",
-    "darkModeText": "Tmavý režim",
+  "darkModeText": "Tmavý režim",
   "showOnlyDaysText": "Jen dny",
   "startFromZeroText": "Začít od nuly",
   "appLanguageText": "Jazyk",
-    "appLanguageMenuLabel": "Jazyk",
+  "appLanguageMenuLabel": "Jazyk",
   "appMenuItemEnglish": "Angličtina",
   "appMenuItemCzech": "Čeština",
   "infoButton": "O aplikaci",
   "supportButton": "Buy me a coffee",
-
-    "homeButtonNavigation": "Domů",
+  "homeButtonNavigation": "Domů",
   "loveButtonNavigation": "Láska",
   "nameDayButtonNavigation": "Svátky",
   "quotesButtonNavigation": "Citáty",

@@ -4,7 +4,9 @@ import 'package:couplefy/theme/app_colors.dart';
 import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/utils/shared_preferences_utils.dart';
 
+/// Widget which displays dark mode row.
 class DarkModeSwitch extends StatefulWidget {
+  /// Creates an instance of [DarkModeSwitch].
   const DarkModeSwitch({super.key});
 
   @override
@@ -24,11 +26,10 @@ class _DarkModeSwitchState extends State<DarkModeSwitch> {
         Switch(
           activeColor: AppColors.switchActiveColor,
           inactiveThumbColor: AppColors.switchInactiveThumbColor,
-
           activeTrackColor: AppColors.switchActiveTrackColor,
           inactiveTrackColor: AppColors.switchInactiveTrackColor,
-          // thumbIcon: thumbIcon(Icons.safety_check),
           value: SharedPreferencesUtils.darkMode.value,
+          // Handles user interaction with the switch
           onChanged: (bool value) async {
             setState(() {
               SharedPreferencesUtils.darkMode.value = value;

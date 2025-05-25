@@ -3,7 +3,9 @@ import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/utils/date_picker_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// A widget that displays the duration of the relationship.
 class LoveDuration extends StatefulWidget {
+  /// Creates an instance of [LoveDuration].
   const LoveDuration({super.key});
 
   @override
@@ -16,11 +18,14 @@ class _LoveDurationState extends State<LoveDuration> {
     return ValueListenableBuilder<bool>(
       valueListenable: DatePickerUtils.showOnlyDays,
       builder: (context, showOnlyDays, _) {
+        // If user choose to show "only days" then this will show up
         if (showOnlyDays) {
           return Column(
             children: [
-              Text("${DatePickerUtils.daysTogether(context)}",
-                  style: AppTextStyles.labelHomePageText(context)),
+              Text(
+                "${DatePickerUtils.daysTogether(context)}",
+                style: AppTextStyles.labelHomePageText(context),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -40,9 +45,12 @@ class _LoveDurationState extends State<LoveDuration> {
               ),
             ],
           );
-        } else {
+        }
+        // If user choose to not show "only days" then this will show up
+        else {
           return Column(
             children: [
+              // Row for year and month
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 // mainAxisSize: MainAxisSize.max,
@@ -57,6 +65,7 @@ class _LoveDurationState extends State<LoveDuration> {
                   ),
                 ],
               ),
+              // Row for week and day
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -77,6 +86,7 @@ class _LoveDurationState extends State<LoveDuration> {
                     Icons.favorite,
                     color: Colors.red,
                   ),
+                  // Text with today's date or with date which user picked
                   Text(
                     DatePickerUtils.wholeDate()!,
                     style: AppTextStyles.labelHomePageText(context),
@@ -90,15 +100,6 @@ class _LoveDurationState extends State<LoveDuration> {
             ],
           );
         }
-
-        // final text = showOnlyDays
-        //     ? "${DatePickerUtils.daysTogether()} days Together"
-        //     : "${DatePickerUtils.yearsTogether()} Together";
-        //
-        // return Text(
-        //   text,
-        //   style: const TextStyle(fontSize: 28),
-        // );
       },
     );
   }
