@@ -6,7 +6,7 @@ import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/utils/date_picker_utils.dart';
 
 /// A widget that displays the container with name and date in the [NameDayScreen].
-class NameDayRow extends StatefulWidget {
+class NameDayRow extends StatelessWidget {
   /// Creates an instance of [NameDayRow].
   ///
   ///   Parameters:
@@ -16,14 +16,9 @@ class NameDayRow extends StatefulWidget {
   final NameDayModel nameDayModel;
 
   @override
-  State<NameDayRow> createState() => _NameDayRowState();
-}
-
-class _NameDayRowState extends State<NameDayRow> {
-  @override
   Widget build(BuildContext context) {
     // If the day is current day. Then this happen:
-    if (DatePickerUtils.todayDate.day == widget.nameDayModel.date.day && DatePickerUtils.todayDate.month == widget.nameDayModel.date.month) {
+    if (DatePickerUtils.todayDate.day == nameDayModel.date.day && DatePickerUtils.todayDate.month == nameDayModel.date.month) {
       return Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -46,11 +41,11 @@ class _NameDayRowState extends State<NameDayRow> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  widget.nameDayModel.name,
+                  nameDayModel.name,
                   style: AppTextStyles.todayNameDayRow(context),
                 ),
                 Text(
-                  "${widget.nameDayModel.date.day.toString().padLeft(2, '0')}.${widget.nameDayModel.date.month.toString().padLeft(2, '0')}",
+                  "${nameDayModel.date.day.toString().padLeft(2, '0')}.${nameDayModel.date.month.toString().padLeft(2, '0')}",
                   style: AppTextStyles.todayNameDayRow(context),
                 ),
               ],
@@ -84,11 +79,11 @@ class _NameDayRowState extends State<NameDayRow> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                widget.nameDayModel.name,
+                nameDayModel.name,
                 style: AppTextStyles.nameDayRow(context),
               ),
               Text(
-                "${widget.nameDayModel.date.day.toString().padLeft(2, '0')}.${widget.nameDayModel.date.month.toString().padLeft(2, '0')}",
+                "${nameDayModel.date.day.toString().padLeft(2, '0')}.${nameDayModel.date.month.toString().padLeft(2, '0')}",
                 style: AppTextStyles.nameDayRow(context),
               ),
             ],

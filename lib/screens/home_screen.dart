@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:couplefy/widgets/homepage/homepage_cards.dart';
 
 /// Home Screen (in app third position)
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   /// Creates an instance of [HomeScreen].
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(

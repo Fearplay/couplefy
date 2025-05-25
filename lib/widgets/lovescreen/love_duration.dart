@@ -4,15 +4,10 @@ import 'package:couplefy/utils/date_picker_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A widget that displays the duration of the relationship.
-class LoveDuration extends StatefulWidget {
+class LoveDuration extends StatelessWidget {
   /// Creates an instance of [LoveDuration].
   const LoveDuration({super.key});
 
-  @override
-  State<LoveDuration> createState() => _LoveDurationState();
-}
-
-class _LoveDurationState extends State<LoveDuration> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(

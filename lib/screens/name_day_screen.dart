@@ -3,15 +3,10 @@ import 'package:couplefy/data/name_day.dart';
 import 'package:couplefy/widgets/namedayscreen/name_day_row.dart';
 
 /// Name Day Screen (in app second position)
-class NameDayScreen extends StatefulWidget {
+class NameDayScreen extends StatelessWidget {
   /// Creates an instance of [NameDayScreen].
   const NameDayScreen({super.key});
 
-  @override
-  State<NameDayScreen> createState() => _NameDayScreenState();
-}
-
-class _NameDayScreenState extends State<NameDayScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(
