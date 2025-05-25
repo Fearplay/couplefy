@@ -1,14 +1,13 @@
-import 'dart:math';
-
 import 'package:couplefy/theme/app_button_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/utils/date_picker_utils.dart';
 import 'package:couplefy/utils/shared_preferences_utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:couplefy/l10n/app_localizations.dart';
 
+/// Widget which displays date text and text field.
 class DateRow extends StatefulWidget {
+  /// Creates an instance of [DateRow].
   const DateRow({super.key});
 
   @override
@@ -24,11 +23,16 @@ class _DateRowState extends State<DateRow> {
     super.initState();
     final savedDate = DatePickerUtils.loveDate;
     if (savedDate != null) {
-      _dateController.text =
-          DatePickerUtils.makeEuropeDate(DateTime.parse(savedDate)) ?? '';
+      _dateController.text = DatePickerUtils.makeEuropeDate(DateTime.parse(savedDate)) ?? '';
     }
   }
 
+  /// Opens a date picker and updates the selected date and text field if a date is picked.
+  ///
+  /// Uses [DatePickerUtils.selectDate] to let the user choose a date.
+  /// If a date is selected, it:
+  /// - Updates the [_selectedDate] state
+  /// - Formats the date using European format and sets it in [_dateController]
   Future<void> _selectDate() async {
     DateTime? picked = await DatePickerUtils.selectDate(context: context);
     if (picked != null) {
@@ -39,18 +43,31 @@ class _DateRowState extends State<DateRow> {
     }
   }
 
+  /// Saves the selected date to shared preferences and shows a confirmation SnackBar.
+  ///
+  /// Only proceeds if:
+  /// - A date is selected
+  /// - The selected date is different from the already saved love date
+  ///
+  /// Performs the following:
+  /// - Converts the selected date to a formatted string
+  /// - Saves it to [SharedPreferences] using [SharedPreferencesUtils.setLoveDate]
+  /// - Shows a localized SnackBar message as confirmation
   Future<void> _saveDate() async {
     if (_selectedDate != null) {
-      String selectedDateString =
-          _selectedDate!.toString().split(" ")[0]; // yyyy-MM-dd
+      String selectedDateString = _selectedDate!.toString().split(" ")[0];
       if (!mounted) return;
+      // Close keyboard if open
       FocusScope.of(context).unfocus();
+      // Avoid re-saving the same date
       if (DatePickerUtils.loveDate == selectedDateString) {
         return;
       }
+      // Save new date to memory and shared preferences
       DatePickerUtils.loveDate = selectedDateString;
       await SharedPreferencesUtils.setLoveDate(_selectedDate!);
       if (!mounted) return;
+      // Show success SnackBar
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
@@ -65,21 +82,6 @@ class _DateRowState extends State<DateRow> {
       );
     }
   }
-
-  // Future<void> _selectDate() async {
-  //   DateTime? picked = await DatePickerUtils.selectDate(context: context);
-  //   if (picked != null) {
-  //     DatePickerUtils.loveDate = picked.toString().split(" ")[0];
-  //     await SharedPreferencesUtils.setLoveDate(picked);
-  //     setState(() {
-  //       // _dateController.text = picked.toString().split(" ")[0];
-  //       _dateController.text = DatePickerUtils.makeEuropeDate(picked)!;
-  //
-  //       // int timestamp = DatePickerUtils.loveDate as int;
-  //       // DatePickerUtils.loveDate = _dateController.text;
-  //     });
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {

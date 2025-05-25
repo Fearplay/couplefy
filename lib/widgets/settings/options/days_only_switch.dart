@@ -3,10 +3,11 @@ import 'package:couplefy/theme/app_colors.dart';
 import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/utils/date_picker_utils.dart';
 import 'package:couplefy/utils/shared_preferences_utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:couplefy/l10n/app_localizations.dart';
 
+/// Widget which displays days only row.
 class DaysOnlySwitch extends StatefulWidget {
+  /// Creates an instance of [DaysOnlySwitch].
   const DaysOnlySwitch({super.key});
 
   @override
@@ -26,13 +27,10 @@ class _DaysOnlySwitchState extends State<DaysOnlySwitch> {
         Switch(
           activeColor: AppColors.switchActiveColor,
           inactiveThumbColor: AppColors.switchInactiveThumbColor,
-
           activeTrackColor: AppColors.switchActiveTrackColor,
           inactiveTrackColor: AppColors.switchInactiveTrackColor,
-
-          // thumbIcon: thumbIcon(Icons.safety_check),
           value: DatePickerUtils.showOnlyDays.value,
-
+          // Handles user interaction with the switch
           onChanged: (bool value) async {
             setState(() {
               DatePickerUtils.showOnlyDays.value = value;

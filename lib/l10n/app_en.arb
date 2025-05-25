@@ -29,39 +29,39 @@
   },
   "snackBarNames": "Both names must be filled!",
   "snackBarSaveNames": "Names were saved!",
-    "snackBarSaveDate": "Date was saved!",
+  "snackBarSaveDate": "Date was saved!",
   "settingsDateTitle": "Start Date",
   "dateLabel": "Date",
-  "datePickerHintText" : "Select date",
+  "datePickerHintText": "Select date",
   "yearsText": "{countYears, plural, one{{countYears} year} other{{countYears} years}}",
   "@yearsText": {
-    "description": "New messages count on the Home screen",
+    "description": "Years counter",
     "placeholders": {
       "countYears": {}
     }
   },
   "monthsText": "{countMonths, plural, one{{countMonths} month} other{{countMonths} months}}",
   "@monthsText": {
-    "description": "New messages count on the Home screen",
+    "description": "Months counter",
     "placeholders": {
       "countMonths": {}
     }
   },
   "weeksText": "{countWeeks, plural, one{{countWeeks} week} other{{countWeeks} weeks}}",
   "@weeksText": {
-    "description": "New messages count on the Home screen",
+    "description": "Weeks counter",
     "placeholders": {
       "countWeeks": {}
     }
   },
   "daysText": "{countDays, plural, one{{countDays} day} other{{countDays} days}}",
   "@daysText": {
-    "description": "New messages count on the Home screen",
+    "description": "Days counter",
     "placeholders": {
       "countDays": {}
     }
   },
-    "settingsOptionsTitle": "Options",
+  "settingsOptionsTitle": "Options",
   "darkModeText": "Dark Mode",
   "showOnlyDaysText": "Days only",
   "startFromZeroText": "Start from zero",
@@ -71,11 +71,9 @@
   "appMenuItemCzech": "Czech",
   "infoButton": "About App",
   "supportButton": "Buy me a coffee",
-
   "homeButtonNavigation": "Home",
   "loveButtonNavigation": "Love",
   "nameDayButtonNavigation": "Name Days",
   "quotesButtonNavigation": "Quotes",
   "settingsButtonNavigation": "Settings"
-
 }

@@ -7,6 +7,7 @@ import 'package:couplefy/screens/quote_screen.dart';
 import 'package:couplefy/screens/settings_screen.dart';
 
 class MainLayout extends StatefulWidget {
+  /// Creates an instance of [MainLayout].
   const MainLayout({super.key});
 
   @override
@@ -16,6 +17,7 @@ class MainLayout extends StatefulWidget {
 class _MainLayoutState extends State<MainLayout> {
   int currentPageIndex = 0;
 
+  // List with all my screens in the order
   final List<Widget> screens = const [
     LoveScreen(key: ValueKey(1)),
     NameDayScreen(key: ValueKey(2)),
@@ -33,11 +35,9 @@ class _MainLayoutState extends State<MainLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text("data"),),
       body: SafeArea(
-        
-        // top: false,
         child: AnimatedSwitcher(
+          // Duration of the animation
           duration: const Duration(milliseconds: 100),
           child: screens[currentPageIndex],
         ),

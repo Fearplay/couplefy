@@ -62,8 +62,7 @@ import 'app_localizations_en.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -84,19 +82,15 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('en'),
-    Locale('cs'),
-  ];
+  static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('cs')];
 
   /// No description provided for @appName.
   ///
@@ -242,25 +236,25 @@ abstract class AppLocalizations {
   /// **'Select date'**
   String get datePickerHintText;
 
-  /// New messages count on the Home screen
+  /// Years counter
   ///
   /// In en, this message translates to:
   /// **'{countYears, plural, one{{countYears} year} other{{countYears} years}}'**
   String yearsText(num countYears);
 
-  /// New messages count on the Home screen
+  /// Months counter
   ///
   /// In en, this message translates to:
   /// **'{countMonths, plural, one{{countMonths} month} other{{countMonths} months}}'**
   String monthsText(num countMonths);
 
-  /// New messages count on the Home screen
+  /// Weeks counter
   ///
   /// In en, this message translates to:
   /// **'{countWeeks, plural, one{{countWeeks} week} other{{countWeeks} weeks}}'**
   String weeksText(num countWeeks);
 
-  /// New messages count on the Home screen
+  /// Days counter
   ///
   /// In en, this message translates to:
   /// **'{countDays, plural, one{{countDays} day} other{{countDays} days}}'**
@@ -357,8 +351,7 @@ abstract class AppLocalizations {
   String get settingsButtonNavigation;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -367,8 +360,7 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['cs', 'en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['cs', 'en'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -383,10 +375,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsEn();
   }
 
-  throw FlutterError(
-    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-    'an issue with the localizations generation tool. Please file an issue '
-    'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.',
-  );
+  throw FlutterError('AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
 }

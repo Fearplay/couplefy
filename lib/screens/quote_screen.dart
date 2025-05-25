@@ -1,16 +1,13 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:couplefy/data/quotes.dart';
 import 'package:couplefy/theme/app_button_styles.dart';
 import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/utils/quote_utils.dart';
 import 'package:couplefy/utils/shared_preferences_utils.dart';
-import 'package:couplefy/utils/tab_name_utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:couplefy/l10n/app_localizations.dart';
 
+/// Quote Screen (in app fourth position)
 class QuoteScreen extends StatefulWidget {
+  /// Creates an instance of [QuoteScreen].
   const QuoteScreen({super.key});
 
   @override
@@ -21,17 +18,23 @@ class _QuoteScreenState extends State<QuoteScreen> {
   late String quoteText;
   late String quoteAuthor;
 
+  /// Initializes the quote text and author.
+  /// Uses a cached quote if available; otherwise, retrieves a new one.
   @override
   void initState() {
     super.initState();
     quoteText = QuoteUtils.currentQuoteText ?? QuoteUtils().getQuoteText();
-    quoteAuthor =
-        QuoteUtils.currentQuoteAuthor ?? QuoteUtils().getQuoteAuthor();
+    quoteAuthor = QuoteUtils.currentQuoteAuthor ?? QuoteUtils().getQuoteAuthor();
   }
 
+  /// Loads a new random quote and updates the state.
+  ///
+  /// - Fetches and saves quotes via [QuoteUtils].
+  /// - Updates `quoteText` and `quoteAuthor`.
+  /// - Saves selected quote using [SharedPreferencesUtils].
   void randomQuote() async {
     setState(() {
-      QuoteUtils.getAndSaveQuotes();
+      QuoteUtils.getQuote();
       quoteText = QuoteUtils.currentQuoteText!;
       quoteAuthor = QuoteUtils.currentQuoteAuthor!;
     });
@@ -43,7 +46,6 @@ class _QuoteScreenState extends State<QuoteScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // TabNameUtils(AppLocalizations.of(context)!.quotesTabName),
         Expanded(
           child: Center(
             child: SingleChildScrollView(
@@ -69,6 +71,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
                       height: 20,
                     ),
                     ElevatedButton(
+                      // Generate random quote
                       onPressed: randomQuote,
                       style: AppButtonStyles.allButtons(context),
                       child: Padding(
@@ -87,61 +90,5 @@ class _QuoteScreenState extends State<QuoteScreen> {
         ),
       ],
     );
-    // return Column(
-    //   crossAxisAlignment: CrossAxisAlignment.start,
-    //   children: [
-    //     TabNameUtils(AppLocalizations.of(context)!.quotesTabName),
-    //     Expanded(
-    //       child: Center(
-    //         child: SingleChildScrollView(
-    //           child: Padding(
-    //             padding: const EdgeInsets.all(20.0),
-    //             child: Column(
-    //               children: [
-    //                 Icon(
-    //                   Icons.format_quote_sharp,
-    //                   size: 50,
-    //                 ),
-    //                 Text(
-    //                   quoteText,
-    //                   style: TextStyle(
-    //                     fontSize: 32,
-    //                   ),
-    //                   textAlign: TextAlign.center,
-    //                 ),
-    //                 Text(
-    //                   "- $quoteAuthor",
-    //                   style: TextStyle(
-    //                     fontSize: 28,
-    //                     fontWeight: FontWeight.bold,
-    //                   ),
-    //                 ),
-    //                 SizedBox(
-    //                   height: 20,
-    //                 ),
-    //                 ElevatedButton(
-    //                   onPressed: randomQuote,
-    //                   style: ElevatedButton.styleFrom(
-    //                     shape: RoundedRectangleBorder(
-    //                       borderRadius: BorderRadius.circular(8),
-    //                     ),
-    //                     backgroundColor: Colors.purple,
-    //                   ),
-    //                   child: Padding(
-    //                     padding: const EdgeInsets.all(15.0),
-    //                     child: Text(
-    //                       AppLocalizations.of(context)!.quoteButton,
-    //                       style: TextStyle(color: Colors.white, fontSize: 20),
-    //                     ),
-    //                   ),
-    //                 ),
-    //               ],
-    //             ),
-    //           ),
-    //         ),
-    //       ),
-    //     ),
-    //   ],
-    // );
   }
 }

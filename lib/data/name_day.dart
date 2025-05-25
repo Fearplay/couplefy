@@ -1,5 +1,6 @@
 import 'package:couplefy/models/name_day_model.dart';
 
+//List of Czech names in calendar. Where the name is missing it is called as nobody
 final List<NameDayModel> nameDays = [
   NameDayModel("Nobody", DateTime(2001, 1, 1), "cs"),
   NameDayModel("Karina", DateTime(2001, 1, 2), "cs"),

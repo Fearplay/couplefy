@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:couplefy/utils/tab_name_utils.dart';
-import 'package:couplefy/widgets/settings/options/about_row.dart';
 import 'package:couplefy/widgets/settings/date_row.dart';
 import 'package:couplefy/widgets/settings/name_row.dart';
 import 'package:couplefy/widgets/settings/option_buttons_row.dart';
-import 'package:couplefy/l10n/app_localizations.dart';
 
+/// Settings Screen (in app fifth position)
 class SettingsScreen extends StatelessWidget {
+  /// Creates an instance of [SettingsScreen].
   const SettingsScreen({super.key});
 
   @override
@@ -14,18 +13,22 @@ class SettingsScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // TabNameUtils(AppLocalizations.of(context)!.settingsTabName),
-
         Expanded(
           child: ListView(
             padding: const EdgeInsets.all(20.0),
             children: const [
+              // Widget for choosing names
               NameRow(),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
+              // Widget for choosing date
               DateRow(),
-              SizedBox(height: 35,),
+              SizedBox(
+                height: 35,
+              ),
+              // Widget for choosing options
               OptionButtonsRow(),
-
             ],
           ),
         ),

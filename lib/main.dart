@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:couplefy/app.dart';
-import 'package:couplefy/utils/date_picker_utils.dart';
 import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
+  // To not show phone buttons. Only app buttons
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-SystemChrome.setPreferredOrientations([
+  // Only portrait up is allowed
+  SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-
-
+  // Init of things in Shared Preferences
   await SharedPreferencesUtils.init();
-  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.top]);
-  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   GoogleFonts.config.allowRuntimeFetching = false;
+  // Run my app
   runApp(MyApp());
 }
-
-
-

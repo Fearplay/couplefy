@@ -1,10 +1,6 @@
-import 'dart:ffi';
-
 import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:couplefy/app.dart';
 import 'package:couplefy/l10n/app_localizations.dart';
-import 'package:intl/intl.dart';
 
 class DatePickerUtils {
   static String? loveDate;
@@ -12,6 +8,20 @@ class DatePickerUtils {
   static DateTime? saveLoveDate;
   static final DateTime todayDate = DateTime.now();
 
+  /// Displays a date picker dialog and returns the selected date.
+  ///
+  ///   Parameters:
+  /// - [context]: The build context in which to show the dialog.
+  ///
+  /// Opens a modal date picker using [showDatePicker] with:
+  /// - English locale.
+  /// - Date range from 1900 to today.
+  /// - A localized hint text from [AppLocalizations].
+  /// - Initial date set to [loveDate] if available, otherwise today.
+  ///
+  /// Returns:
+  /// - [DateTime]: If the user selects a date.
+  /// - `null`: If the user cancels the picker.
   static Future<DateTime?> selectDate({
     required BuildContext context,
   }) async {
@@ -22,10 +32,14 @@ class DatePickerUtils {
         fieldHintText: AppLocalizations.of(context)!.dateWriteHint,
         firstDate: DateTime(1900),
         lastDate: DateTime.now(),
-        initialDate:
-            loveDate == null ? DateTime.now() : DateTime.parse(loveDate!));
+        initialDate: loveDate == null ? DateTime.now() : DateTime.parse(loveDate!));
   }
 
+  /// Initialize a date picker dialog and returns the previous selected date or today's date.
+  ///
+  /// Returns:
+  /// - [DateTime]: `picked date` if the user had selected a date before.
+  /// - [DateTime]: `today's date` if the user picking the date for the first time.
   static DateTime initialDateShowPicker() {
     if (loveDate == null) {
       return DateTime.now();
@@ -33,30 +47,36 @@ class DatePickerUtils {
     return DateTime.parse(loveDate!);
   }
 
+  /// Converts a date object to European date format (DD/MM/YYYY).
+  ///
+  /// Parameters:
+  /// - [date]: Accepts any object (e.g., DateTime or String).
+  ///
+  /// Returns:
+  /// - [String]: Converted date to european format.
   static String? makeEuropeDate(dynamic date) {
     List<String> parts = date.toString().split(" ");
     List<String> dateParts = parts[0].split("-");
     return "${dateParts[2]}/${dateParts[1]}/${dateParts[0]}";
   }
 
-  static int saveDate(DateTime saveLove) {
-    return saveLove.millisecondsSinceEpoch;
-  }
-
-  static String? saveDatetoDate(int timestamp) {
-    return makeEuropeDate(DateTime.fromMillisecondsSinceEpoch(timestamp));
-  }
-
+  /// Converts a date object to European date format (DD/MM/YYYY).
+  ///
+  /// Returns:
+  /// - [String]: The selected date in European format, if the user picked a date using [selectDate].
+  /// - [String]: Converted today's date in European format.
   static String? wholeDate() {
-    // List<String> parts = DateTime.now().toString().split(" ");
-    // List<String> dateParts = parts[0].split("-");
     if (loveDate != null) {
       return makeEuropeDate(loveDate);
     }
     return makeEuropeDate(DateTime.now());
-    // return DateTime.now().toString().split(" ")[0];
   }
 
+  /// Converts a date object to European date format (DD/MM/YYYY).
+  ///
+  /// Returns:
+  /// - A [int] containing the difference in days between chosen date of the user and today's date if the user picked a date using [selectDate].
+  /// - A [int] with zero if the user didn't pick a date using [selectDate].
   static int differenceDays() {
     if (loveDate != null) {
       DateTime today = DateTime.now();
@@ -68,106 +88,52 @@ class DatePickerUtils {
     return 0;
   }
 
+  /// Add one day to days if user doesn't want to count from zero.
+  ///
+  ///   Parameters:
+  /// - [context]: The build context for the [AppLocalizations].
+  /// - [int]: Number for option count from zero
+  ///
+  /// Returns:
+  /// - A [int]: The difference in days between chosen date of the user and today's date if the user picked a date using [selectDate].
+  /// - A [int]: Zero if the user didn't pick a date using [selectDate].
   static String? startFromZero(BuildContext context, int number) {
     if (loveDate != null) {
       return AppLocalizations.of(context)!.daysText(differenceDays() + number);
-      // return differenceDays() == 1
-      //     ? "${differenceDays().toString()} day Together"
-      //     : "${differenceDays().toString()} days Together";
     }
     return AppLocalizations.of(context)!.daysText(0);
   }
 
+  /// Counts how long the couple has been together in `days`.
+  ///
+  ///   Parameters:
+  /// - [context]: The build context for the [startFromZero].
+  ///
+  /// Returns:
+  /// - A [String]: How long the couple has been together in days if the user has turned on the switch (indicating they want to count from day zero).
+  /// - A [String]: How long the couple has been together in days if the user has turned off the switch (indicating they want to count from day one).
   static String? daysTogether(BuildContext context) {
     if (SharedPreferencesUtils.startFromZero.value == true) {
-      // if (loveDate != null) {
-      //   return AppLocalizations.of(context)!.daysText(differenceDays());
-      //   // return differenceDays() == 1
-      //   //     ? "${differenceDays().toString()} day Together"
-      //   //     : "${differenceDays().toString()} days Together";
-      // }
-      // return AppLocalizations.of(context)!.daysText(0);
       return startFromZero(context, 0);
     } else {
-      // if (loveDate != null) {
-      //   return AppLocalizations.of(context)!.daysText(differenceDays() + 1);
-      //   // return differenceDays() == 1
-      //   //     ? "${differenceDays().toString()} day Together"
-      //   //     : "${differenceDays().toString()} days Together";
-      // }
-      // return AppLocalizations.of(context)!.daysText(0);
       return startFromZero(context, 1);
     }
   }
 
-  static int _daysToYears() {
-    int? days = differenceDays();
-    double year = days / 365.25;
-
-    return year.floor();
-  }
-
-  static List<dynamic> _daysToMonths() {
-    double daysAfterYear = differenceDays()! - (_daysToYears() * 365.25);
-
-    double month = daysAfterYear / 30.44;
-
-    return [daysAfterYear, month.floor()];
-  }
-
-  static List<dynamic> _daysToWeeks() {
-    double daysAfterMonth = _daysToMonths()[0] - (_daysToMonths()[1] * 30.44);
-
-    double week = daysAfterMonth / 7;
-    // print(week.floor());
-    // print(week);
-    // print(_daysToMonths()[0]);
-    // print((_daysToMonths()[1] * 30.44));
-    return [daysAfterMonth, week.floor()];
-  }
-
-  static int _daysToDays() {
-    double daysAfterWeek = _daysToWeeks()[0] - (_daysToWeeks()[1] * 7);
-
-    // String inString = daysAfterWeek.toStringAsFixed(0);
-    // int inDouble = int.parse(inString);
-    return daysAfterWeek.floor();
-  }
-
-//   static String formatPluralEnglish(int number, String englishSingular, String englishPlural) {
-//     return "$number ${number == 1 ? englishSingular : englishPlural}";
-//   }
-//
-//
-// static String formatPluralCzech(int count, String czechSingular, String czechFew, String czechPlural) {
-//   if (count == 1) {
-//     return "$count $czechSingular";
-//   } else if (count >= 2 && count <= 4) {
-//     return "$count $czechFew";
-//   } else {
-//     return "$count $czechPlural";
-//   }
-// }
-// static String formatPluralAuto(int count, String englishSingular, String englishPlural, String czechSingular, String czechFew, String czechPlural) {
-//   if (MyApp.language.toString() == "cs") {
-//     return formatPluralCzech(count, czechSingular, czechFew, czechPlural);
-//   } else {
-//     return formatPluralEnglish(count, englishSingular, englishPlural);
-//
-//   }
-// }
-  static List<dynamic> _countOfYears() {
+  /// Counts how long the couple has been together in years, months, weeks, days.
+  ///
+  /// Returns:
+  /// - A [List]: With [int] values `years`,`months`, `weeks`, `days`.
+  static List<int> _countOfYears() {
     final datePick = initialDateShowPicker();
     int years = todayDate.year - datePick.year;
     int months = todayDate.month - datePick.month;
     int days = todayDate.day - datePick.day;
-
     if (days < 0) {
       months -= 1;
       final prevMonth = DateTime(todayDate.year, todayDate.month, 0);
       days += prevMonth.day;
     }
-
     if (months < 0) {
       years -= 1;
       months += 12;
@@ -177,6 +143,14 @@ class DatePickerUtils {
     return [years, months, weeks, days];
   }
 
+  /// Counts how long the couple has been together in `years`,`months`, `weeks`, `days`.
+  ///
+  ///   Parameters:
+  /// - [context]: The build context for the [AppLocalizations].
+  ///
+  /// Returns:
+  /// - A [List]: With `dynamic` values of how long the couple has been together in `years`,`months`, `weeks`, `days` if the user picked a date using [selectDate].
+  /// - A [List]: With `dynamic` values of how long the couple has been together in `years`,`months`, `weeks`, `days` if the user didn't pick a date using [selectDate] (only zeros).
   static List<dynamic> yearsTogether(BuildContext context) {
     if (loveDate != null) {
       return [
@@ -184,22 +158,13 @@ class DatePickerUtils {
         AppLocalizations.of(context)!.monthsText(_countOfYears()[1]),
         AppLocalizations.of(context)!.weeksText(_countOfYears()[2]),
         AppLocalizations.of(context)!.daysText(_countOfYears()[3]),
-        // formatPluralAuto(_daysToYears(), "year", "years", "rok", "roky", "roků"),
-        // formatPluralAuto(_daysToMonths()[1], "month", "months", "měsíc", "měsíce", "měsíců"),
-        // formatPluralAuto(_daysToWeeks()[1], "week", "weeks", "týden", "týdny", "týdnů"),
-        // formatPluralAuto(_daysToDays(), "day", "days", "den", "dny", "dnů"),
       ];
-      // return ["${_daysToYears()} years", "${_daysToMonths()[1]} months", "${_daysToWeeks()[1]} weeks", "${_daysToDays()} days"];
     }
     return [
       AppLocalizations.of(context)!.yearsText(0),
       AppLocalizations.of(context)!.monthsText(0),
       AppLocalizations.of(context)!.weeksText(0),
       AppLocalizations.of(context)!.daysText(0),
-      // formatPluralAuto(0, "year", "years", "rok", "roky", "roků"),
-      // formatPluralAuto(0, "month", "months", "měsíc", "měsíce", "měsíců"),
-      // formatPluralAuto(0, "week", "weeks", "týden", "týdny", "týdnů"),
-      // formatPluralAuto(0, "day", "days", "den", "dny", "dnů"),
     ];
   }
 }
