@@ -4,21 +4,17 @@ import 'package:couplefy/utils/quote_utils.dart';
 import 'package:couplefy/l10n/app_localizations.dart';
 
 /// A widget that displays the second homepage card about quote.
-class QuoteHomepageCard extends StatefulWidget {
+class QuoteHomepageCard extends StatelessWidget {
   /// Creates an instance of [QuoteHomepageCard].
   ///  Parameters:
   /// - [gradientColor]: The colors in [List].
-  const QuoteHomepageCard(this.gradientColor, {super.key});
+  QuoteHomepageCard(this.gradientColor, {super.key});
 
   final List<Color> gradientColor;
 
-  @override
-  State<QuoteHomepageCard> createState() => _QuoteHomepageCardState();
-}
+  final String quoteText = QuoteUtils.currentQuoteText ?? QuoteUtils().getQuoteText();
 
-class _QuoteHomepageCardState extends State<QuoteHomepageCard> {
-  String quoteText = QuoteUtils.currentQuoteText ?? QuoteUtils().getQuoteText();
-  String quoteAuthor = QuoteUtils.currentQuoteAuthor ?? QuoteUtils().getQuoteAuthor();
+  final String quoteAuthor = QuoteUtils.currentQuoteAuthor ?? QuoteUtils().getQuoteAuthor();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +24,7 @@ class _QuoteHomepageCardState extends State<QuoteHomepageCard> {
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: widget.gradientColor,
+          colors: gradientColor,
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

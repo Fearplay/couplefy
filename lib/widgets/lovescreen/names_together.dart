@@ -2,17 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:couplefy/utils/love_counter_utils.dart';
 
 /// A widget which will display names together.
-class NamesTogether extends StatefulWidget {
+class NamesTogether extends StatelessWidget {
   /// Creates an instance of [NamesTogether].
   const NamesTogether(this.nameStyle, {super.key});
 
   final TextStyle nameStyle;
 
-  @override
-  State<NamesTogether> createState() => _NamesTogetherState();
-}
-
-class _NamesTogetherState extends State<NamesTogether> {
   @override
   Widget build(BuildContext context) {
     // if the 'LoveCounterUtils.firstPersonName!.length' is lower than 9 and 'LoveCounterUtils.secondPersonName!.length' is lower than 9. Then this happen:
@@ -20,7 +15,7 @@ class _NamesTogetherState extends State<NamesTogether> {
       // Text for 'first name + second name'
       return Text(
         LoveCounterUtils.namesTogether(context),
-        style: widget.nameStyle,
+        style: nameStyle,
         textAlign: TextAlign.center,
       );
     }
@@ -32,19 +27,19 @@ class _NamesTogetherState extends State<NamesTogether> {
           // Text for first name.
           Text(
             LoveCounterUtils.namesListTogether()[0],
-            style: widget.nameStyle,
+            style: nameStyle,
             textAlign: TextAlign.center,
           ),
           // Text for '+'.
           Text(
             LoveCounterUtils.namesListTogether()[1],
-            style: widget.nameStyle,
+            style: nameStyle,
             textAlign: TextAlign.center,
           ),
           // Text for second name.
           Text(
             LoveCounterUtils.namesListTogether()[2],
-            style: widget.nameStyle,
+            style: nameStyle,
             textAlign: TextAlign.center,
           ),
         ],

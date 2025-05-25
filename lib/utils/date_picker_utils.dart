@@ -125,10 +125,16 @@ class DatePickerUtils {
   /// Returns:
   /// - A [List]: With [int] values `years`,`months`, `weeks`, `days`.
   static List<int> _countOfYears() {
+    int days;
     final datePick = initialDateShowPicker();
     int years = todayDate.year - datePick.year;
     int months = todayDate.month - datePick.month;
-    int days = todayDate.day - datePick.day;
+    if (SharedPreferencesUtils.startFromZero.value == true) {
+      days = todayDate.day - datePick.day;
+    } else {
+      days = todayDate.day - datePick.day + 1;
+    }
+
     if (days < 0) {
       months -= 1;
       final prevMonth = DateTime(todayDate.year, todayDate.month, 0);
