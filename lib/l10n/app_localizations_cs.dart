@@ -56,10 +56,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get quoteButton => 'Nový Citát';
 
   @override
-  String get saveButtonNames => 'Uložit jména';
+  String get saveButtonNames => 'Uložit';
 
   @override
-  String get saveButtonDate => 'Uložit datum';
+  String get saveButtonDate => 'Uložit';
 
   @override
   String get namesFallback => 'Musíš zadat obě jména v nastavení!';

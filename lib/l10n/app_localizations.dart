@@ -191,13 +191,13 @@ abstract class AppLocalizations {
   /// No description provided for @saveButtonNames.
   ///
   /// In en, this message translates to:
-  /// **'Save Names'**
+  /// **'Save'**
   String get saveButtonNames;
 
   /// No description provided for @saveButtonDate.
   ///
   /// In en, this message translates to:
-  /// **'Save Date'**
+  /// **'Save'**
   String get saveButtonDate;
 
   /// User didn't choose both names
