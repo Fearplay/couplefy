@@ -21,8 +21,8 @@
   "secondNameHint": "Type partner's name",
   "dateWriteHint": "mm/dd/yyyy",
   "quoteButton": "New Quote",
-  "saveButtonNames": "Save Names",
-  "saveButtonDate": "Save Date",
+  "saveButtonNames": "Save",
+  "saveButtonDate": "Save",
   "namesFallback": "You need to update both names in the settings!",
   "@namesFallback": {
     "description": "User didn't choose both names"

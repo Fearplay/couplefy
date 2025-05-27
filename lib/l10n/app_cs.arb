@@ -21,8 +21,8 @@
   "secondNameHint": "Zadejte jméno partnera",
   "dateWriteHint": "mm/dd/rrrr",
   "quoteButton": "Nový Citát",
-  "saveButtonNames": "Uložit jména",
-  "saveButtonDate": "Uložit datum",
+  "saveButtonNames": "Uložit",
+  "saveButtonDate": "Uložit",
   "namesFallback": "Musíš zadat obě jména v nastavení!",
   "@namesFallback": {
     "description": "Uživatel nevybral obě jména"

@@ -56,10 +56,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quoteButton => 'New Quote';
 
   @override
-  String get saveButtonNames => 'Save Names';
+  String get saveButtonNames => 'Save';
 
   @override
-  String get saveButtonDate => 'Save Date';
+  String get saveButtonDate => 'Save';
 
   @override
   String get namesFallback => 'You need to update both names in the settings!';
