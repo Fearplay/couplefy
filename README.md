@@ -42,6 +42,9 @@ romantic milestones.
 <br>
 <h3><li>Ios</li></h3>
 <img src="assets/screenshots/ios/ios_screenshot_one.png" width="20%" height="20%" alt="Track your love story screenshot"> <img src="assets/screenshots/ios/ios_screenshot_two.png" width="20%" height="20%" alt="All in one view screenshot"> <img src="assets/screenshots/ios/ios_screenshot_three.png" width="20%" height="20%" alt="Get inspired screenshot"> <img src="assets/screenshots/ios/ios_screenshot_four.png" width="20%" height="20%" alt="Dark mode supported screenshot">
+<br>
+<br>
+<br>
 
 ## Localization
 
