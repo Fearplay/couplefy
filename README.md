@@ -1,5 +1,8 @@
 # Couplefy
 
+[![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=for-the-badge&logo=app-store&logoColor=white)](https://apps.apple.com/app/couplefy/id6746437362)
+[![App Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)]()
+
 Couplefy is a Flutter application designed for couples who want to cherish memories, track important shared moments, and
 see how long they’ve been together.
 
@@ -39,10 +42,9 @@ romantic milestones.
 <img src="assets/screenshots/android/android_screenshot_one.png" width="20%" height="20%" alt="Track your love story screenshot"> <img src="assets/screenshots/android/android_screenshot_two.png" width="20%" height="20%" alt="All in one view screenshot"> <img src="assets/screenshots/android/android_screenshot_three.png" width="20%" height="20%" alt="Get inspired screenshot"> <img src="assets/screenshots/android/android_screenshot_four.png" width="20%" height="20%" alt="Dark mode supported screenshot">
 <br>
 <br>
--- 
+--
 * ### Ios
 <img src="assets/screenshots/ios/ios_screenshot_one.png" width="20%" height="20%" alt="Track your love story screenshot"> <img src="assets/screenshots/ios/ios_screenshot_two.png" width="20%" height="20%" alt="All in one view screenshot"> <img src="assets/screenshots/ios/ios_screenshot_three.png" width="20%" height="20%" alt="Get inspired screenshot"> <img src="assets/screenshots/ios/ios_screenshot_four.png" width="20%" height="20%" alt="Dark mode supported screenshot">
-
 
 ## Localization
 
