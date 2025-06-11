@@ -1,7 +1,7 @@
 # Couplefy
 
 [![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=for-the-badge&logo=app-store&logoColor=white)](https://apps.apple.com/app/couplefy/id6746437362)
-[![App Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)]()
+[![Google Play Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.fairplayx.couplefy)
 
 Couplefy is a Flutter application designed for couples who want to cherish memories, track important shared moments, and
 see how long they’ve been together.
