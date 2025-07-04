@@ -1,3 +1,6 @@
+import 'package:couplefy/data/delete_this_file_later.dart';
+import 'package:couplefy/models/name_day_model.dart';
+import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/data/name_day.dart';
 import 'package:couplefy/widgets/namedayscreen/name_day_row.dart';
@@ -14,16 +17,16 @@ class NameDayScreen extends StatefulWidget {
 }
 
 class _NameDayScreenState extends State<NameDayScreen> {
-  //   String? savedLanguage;
-  //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   savedLanguage = SharedPreferencesUtils.selectedValue ?? "en";
-  // }
+    String? savedLanguage;
+
+  @override
+  void initState() {
+    super.initState();
+    savedLanguage = SharedPreferencesUtils.selectedValue ?? "en";
+  }
 
 
-            // child: ListView.builder(
+          //   child: ListView.builder(
           //   itemCount:
           //       nameDays.where((n) => n.languageCode == savedLanguage).length,
           //   itemBuilder: (context, index) {
@@ -33,20 +36,41 @@ class _NameDayScreenState extends State<NameDayScreen> {
           //     return NameDayRow(filteredNames[index]);
           //   },
           // ),
+
+
+
+    // ListView.builder(
+    // // Count all items where languageCode equals to cs
+    // itemCount: nameDays.where((n) => n.languageCode == "cs").length,
+    // itemBuilder: (context, index) {
+    // // Convert all names with cs languageCode to list
+    // final filteredNames = nameDays.where((names) => names.languageCode == "cs").toList();
+    // // Return Widget with all these filtered names
+    // return NameDayRow(filteredNames[index]);
+    // },
+    // ),
+
   @override
   Widget build(BuildContext context) {
+    final filteredNames = dayEntries
+        .where((n) => n.nameDays.containsKey(savedLanguage))
+        .toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           child: ListView.builder(
-            // Count all items where languageCode equals to cs
-            itemCount: nameDays.where((n) => n.languageCode == "cs").length,
+            itemCount:
+            dayEntries.where((n) => n.internationalDay!.containsKey(savedLanguage)).length,
             itemBuilder: (context, index) {
-              // Convert all names with cs languageCode to list
-              final filteredNames = nameDays.where((names) => names.languageCode == "cs").toList();
-              // Return Widget with all these filtered names
-              return NameDayRow(filteredNames[index]);
+              final filteredNames = dayEntries
+                  .where((names) => names.internationalDay!.containsKey(savedLanguage))
+                  .toList();
+              for (var n in dayEntries) {
+                print('Dostupné jazyky: ${n.nameDays.keys}');
+              }
+
+              return NameDayRow(filteredNames[index],savedLanguage);
             },
           ),
         ),
