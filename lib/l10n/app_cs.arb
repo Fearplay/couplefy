@@ -10,6 +10,13 @@
       "month": {}
     }
   },
+    "globalHolidaysHomePage": "Dnes je {day}.{month}. a slaví se",
+  "@globalHolidaysHomePage": {
+    "placeholders": {
+      "day": {},
+      "month": {}
+    }
+  },
   "quoteHomePageTitle": "Citát",
   "homeTabName": "Domovská Stránka",
   "loveTabName": "Počítadlo Lásky",
@@ -63,6 +70,7 @@
   },
   "settingsOptionsTitle": "Možnosti",
   "darkModeText": "Tmavý režim",
+  "internationalHolidaysText": "Světové svátky",
   "showOnlyDaysText": "Jen dny",
   "startFromZeroText": "Začít od nuly",
   "appLanguageText": "Jazyk",

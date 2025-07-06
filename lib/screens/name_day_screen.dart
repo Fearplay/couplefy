@@ -66,9 +66,6 @@ class _NameDayScreenState extends State<NameDayScreen> {
               final filteredNames = dayEntries
                   .where((names) => names.internationalDay!.containsKey(savedLanguage))
                   .toList();
-              for (var n in dayEntries) {
-                print('Dostupné jazyky: ${n.nameDays.keys}');
-              }
 
               return NameDayRow(filteredNames[index],savedLanguage);
             },

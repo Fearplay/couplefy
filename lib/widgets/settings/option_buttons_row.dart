@@ -1,5 +1,6 @@
 import 'package:couplefy/l10n/app_localizations.dart';
 import 'package:couplefy/theme/app_text_styles.dart';
+import 'package:couplefy/widgets/settings/options/global_holidays_switch.dart';
 import 'package:couplefy/widgets/settings/options/start_from_zero_switch.dart';
 import 'package:couplefy/widgets/settings/options/support_me_row.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,11 @@ class OptionButtonsRow extends StatelessWidget {
         ),
         // Dark Mode widget
         const DarkModeSwitch(),
+        const SizedBox(
+          height: 20,
+        ),
+        // International Holidays widget
+        const GlobalHolidaysSwitch(),
         const SizedBox(
           height: 20,
         ),

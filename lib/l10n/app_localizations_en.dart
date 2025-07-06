@@ -19,7 +19,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String nameDayHomePage(Object day, Object month) {
-    return 'Today is $day.$month. and the name day is celebrated by';
+    return 'Today is $month/$day, and the name day is celebrated by';
+  }
+
+  @override
+  String globalHolidaysHomePage(Object day, Object month) {
+    return 'Today is $month/$day, and it\'s';
   }
 
   @override
@@ -131,6 +136,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get darkModeText => 'Dark Mode';
+
+  @override
+  String get internationalHolidaysText => 'Global Holidays';
 
   @override
   String get showOnlyDaysText => 'Days only';

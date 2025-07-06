@@ -119,8 +119,14 @@ abstract class AppLocalizations {
   /// No description provided for @nameDayHomePage.
   ///
   /// In en, this message translates to:
-  /// **'Today is {day}.{month}. and the name day is celebrated by'**
+  /// **'Today is {month}/{day}, and the name day is celebrated by'**
   String nameDayHomePage(Object day, Object month);
+
+  /// No description provided for @globalHolidaysHomePage.
+  ///
+  /// In en, this message translates to:
+  /// **'Today is {month}/{day}, and it\'s'**
+  String globalHolidaysHomePage(Object day, Object month);
 
   /// No description provided for @quoteHomePageTitle.
   ///
@@ -277,6 +283,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Dark Mode'**
   String get darkModeText;
+
+  /// No description provided for @internationalHolidaysText.
+  ///
+  /// In en, this message translates to:
+  /// **'Global Holidays'**
+  String get internationalHolidaysText;
 
   /// No description provided for @showOnlyDaysText.
   ///

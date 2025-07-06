@@ -23,6 +23,11 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
+  String globalHolidaysHomePage(Object day, Object month) {
+    return 'Dnes je $day.$month. a slaví se';
+  }
+
+  @override
   String get quoteHomePageTitle => 'Citát';
 
   @override
@@ -135,6 +140,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get darkModeText => 'Tmavý režim';
+
+  @override
+  String get internationalHolidaysText => 'Světové svátky';
 
   @override
   String get showOnlyDaysText => 'Jen dny';

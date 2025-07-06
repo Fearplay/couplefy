@@ -9,6 +9,9 @@ class SharedPreferencesUtils {
   /// Value notifier for "dark mode" switch button
   static final ValueNotifier<bool> darkMode = ValueNotifier<bool>(true);
 
+  /// Value notifier for "dark mode" switch button
+  static final ValueNotifier<bool> globalHolidays = ValueNotifier<bool>(true);
+
   /// Value notifier for "start from zero" switch button
   static final ValueNotifier<bool> startFromZero = ValueNotifier<bool>(true);
 
@@ -45,6 +48,7 @@ class SharedPreferencesUtils {
     // Load switches
     DatePickerUtils.showOnlyDays.value = prefs.getBool('showOnlyDays') ?? true;
     darkMode.value = prefs.getBool('darkMode') ?? false;
+    globalHolidays.value = prefs.getBool('globalHolidays') ?? true;
     startFromZero.value = prefs.getBool('startFromZero') ?? true;
 
     // Load quote
@@ -106,6 +110,12 @@ class SharedPreferencesUtils {
   static Future<void> setDarkMode(bool value) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool("darkMode", value);
+  }
+
+  /// Saves the "international holidays" switch state.
+  static Future<void> setGlobalHolidays(bool value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool("globalHolidays", value);
   }
 
   /// Saves a quote's text and author to [SharedPreferences].

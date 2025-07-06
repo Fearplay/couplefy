@@ -1,5 +1,6 @@
 import 'package:couplefy/models/day_entry_model.dart';
 import 'package:couplefy/screens/name_day_screen.dart';
+import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/models/name_day_model.dart';
 import 'package:couplefy/theme/app_colors.dart';
@@ -21,10 +22,10 @@ class NameDayRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
-      valueListenable: DatePickerUtils.showOnlyDays,
-      builder: (context, showOnlyDays, _) {
+      valueListenable: SharedPreferencesUtils.globalHolidays,
+      builder: (context, globalHolidays, _) {
         // If user choose to show "only days" then this will show up
-        if (showOnlyDays) {
+        if (globalHolidays) {
           // If the day is current day. Then this happen:
           if (DatePickerUtils.todayDate.day == dayEntryModel.date.day && DatePickerUtils.todayDate.month == dayEntryModel.date.month) {
             return Container(
