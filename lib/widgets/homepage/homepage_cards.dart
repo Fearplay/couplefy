@@ -1,7 +1,8 @@
+import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/widgets/homepage/love_counter_homepage_card.dart';
 import 'package:couplefy/widgets/homepage/quote_homepage_card.dart';
-import 'package:couplefy/widgets/homepage/name_day_homepage_card.dart';
+import 'package:couplefy/widgets/homepage/days_homepage_card.dart';
 
 /// A widget that displays the main homepage cards in a vertical layout.
 ///
@@ -12,9 +13,22 @@ import 'package:couplefy/widgets/homepage/name_day_homepage_card.dart';
 ///
 /// Each card shares a common gradient background defined by
 /// [primaryFixed] and [secondaryFixed] colors from the current theme.
-class HomepageCard extends StatelessWidget {
+class HomepageCard extends StatefulWidget {
   /// Creates an instance of [HomepageCard].
   const HomepageCard({super.key});
+
+  @override
+  State<HomepageCard> createState() => _HomepageCardState();
+}
+
+class _HomepageCardState extends State<HomepageCard> {
+    String? savedLanguage;
+
+  @override
+  void initState() {
+    super.initState();
+    savedLanguage = SharedPreferencesUtils.selectedValue ?? "en";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +41,7 @@ class HomepageCard extends StatelessWidget {
       children: [
         LoveCounterHomepageCard(gradientColors),
         QuoteHomepageCard(gradientColors),
-        NameDayHomepageCard(gradientColors),
+        DaysHomepageCard(gradientColors, savedLanguage),
       ],
     );
   }

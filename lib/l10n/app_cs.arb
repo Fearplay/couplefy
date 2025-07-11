@@ -3,6 +3,7 @@
   "appName": "Love Counter",
   "loveCounterHomePageTitle": "Počítadlo Lásky",
   "nameDayHomePageTitle": "Svátek",
+  "holidayHomePageTitle": "Světový svátek",
   "nameDayHomePage": "Dnes je {day}.{month}. a svátek slaví",
   "@nameDayHomePage": {
     "placeholders": {
@@ -10,6 +11,15 @@
       "month": {}
     }
   },
+    "globalHolidaysHomePage": "Dnes je {day}.{month}. a slaví se",
+  "@globalHolidaysHomePage": {
+    "placeholders": {
+      "day": {},
+      "month": {}
+    }
+  },
+  "globalHolidaysHomePageInfoTextUs": "(Rozšířený zejména v USA)",
+  "globalHolidaysHomePageInfoTextWw": "(Rozšířený po celém světě)",
   "quoteHomePageTitle": "Citát",
   "homeTabName": "Domovská Stránka",
   "loveTabName": "Počítadlo Lásky",
@@ -63,6 +73,7 @@
   },
   "settingsOptionsTitle": "Možnosti",
   "darkModeText": "Tmavý režim",
+  "internationalHolidaysText": "Světové svátky",
   "showOnlyDaysText": "Jen dny",
   "startFromZeroText": "Začít od nuly",
   "appLanguageText": "Jazyk",
@@ -74,6 +85,7 @@
   "homeButtonNavigation": "Domů",
   "loveButtonNavigation": "Láska",
   "nameDayButtonNavigation": "Svátky",
+  "globalHolidayButtonNavigation": "Svátky",
   "quotesButtonNavigation": "Citáty",
   "settingsButtonNavigation": "Nastavení"
 }

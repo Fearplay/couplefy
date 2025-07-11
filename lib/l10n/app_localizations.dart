@@ -116,11 +116,35 @@ abstract class AppLocalizations {
   /// **'Name Day'**
   String get nameDayHomePageTitle;
 
+  /// No description provided for @holidayHomePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Global Holiday'**
+  String get holidayHomePageTitle;
+
   /// No description provided for @nameDayHomePage.
   ///
   /// In en, this message translates to:
-  /// **'Today is {day}.{month}. and the name day is celebrated by'**
+  /// **'Today is {month}/{day}, and the name day is celebrated by'**
   String nameDayHomePage(Object day, Object month);
+
+  /// No description provided for @globalHolidaysHomePage.
+  ///
+  /// In en, this message translates to:
+  /// **'Today is {month}/{day}, and it\'s'**
+  String globalHolidaysHomePage(Object day, Object month);
+
+  /// No description provided for @globalHolidaysHomePageInfoTextUs.
+  ///
+  /// In en, this message translates to:
+  /// **'(Primarily celebrated in the USA)'**
+  String get globalHolidaysHomePageInfoTextUs;
+
+  /// No description provided for @globalHolidaysHomePageInfoTextWw.
+  ///
+  /// In en, this message translates to:
+  /// **'(Widespread around the world)'**
+  String get globalHolidaysHomePageInfoTextWw;
 
   /// No description provided for @quoteHomePageTitle.
   ///
@@ -278,6 +302,12 @@ abstract class AppLocalizations {
   /// **'Dark Mode'**
   String get darkModeText;
 
+  /// No description provided for @internationalHolidaysText.
+  ///
+  /// In en, this message translates to:
+  /// **'Global Holidays'**
+  String get internationalHolidaysText;
+
   /// No description provided for @showOnlyDaysText.
   ///
   /// In en, this message translates to:
@@ -343,6 +373,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Name Days'**
   String get nameDayButtonNavigation;
+
+  /// No description provided for @globalHolidayButtonNavigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Holidays'**
+  String get globalHolidayButtonNavigation;
 
   /// No description provided for @quotesButtonNavigation.
   ///
