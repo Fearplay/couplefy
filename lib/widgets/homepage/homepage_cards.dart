@@ -2,7 +2,7 @@ import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/widgets/homepage/love_counter_homepage_card.dart';
 import 'package:couplefy/widgets/homepage/quote_homepage_card.dart';
-import 'package:couplefy/widgets/homepage/name_day_homepage_card.dart';
+import 'package:couplefy/widgets/homepage/days_homepage_card.dart';
 
 /// A widget that displays the main homepage cards in a vertical layout.
 ///
@@ -41,7 +41,7 @@ class _HomepageCardState extends State<HomepageCard> {
       children: [
         LoveCounterHomepageCard(gradientColors),
         QuoteHomepageCard(gradientColors),
-        NameDayHomepageCard(gradientColors, savedLanguage),
+        DaysHomepageCard(gradientColors, savedLanguage),
       ],
     );
   }

@@ -1,22 +1,19 @@
-import 'package:couplefy/data/delete_this_file_later.dart';
 import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/l10n/app_localizations.dart';
-import 'package:couplefy/data/name_day.dart';
+import 'package:couplefy/data/entry_days_data.dart';
 
 import 'package:couplefy/theme/app_text_styles.dart';
 
 /// A widget that displays the third homepage card about name day.
-class NameDayHomepageCard extends StatelessWidget {
-  /// Creates an instance of [NameDayHomepageCard].
+class DaysHomepageCard extends StatelessWidget {
+  /// Creates an instance of [DaysHomepageCard].
   ///  Parameters:
   /// - [gradientColor]: The colors in [List].
-  const NameDayHomepageCard(this.gradientColor, this.savedLanguage, {super.key});
+  const DaysHomepageCard(this.gradientColor, this.savedLanguage, {super.key});
 
   final List<Color> gradientColor;
   final String? savedLanguage;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +45,7 @@ class NameDayHomepageCard extends StatelessWidget {
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  AppLocalizations.of(context)!.nameDayHomePageTitle,
+                  AppLocalizations.of(context)!.holidayHomePageTitle,
                   style: AppTextStyles.titleHomePageText(context),
                 ),
                 // Text to display today's date with zero for example 25.05.
@@ -58,13 +55,30 @@ class NameDayHomepageCard extends StatelessWidget {
                     dayOfToday.date.day.toString().padLeft(2, '0'),
                     dayOfToday.date.month.toString().padLeft(2, '0'),
                   ),
-                  style: AppTextStyles.middleHomePageText(context),
+                  style: AppTextStyles.middleHolidayText(context),
                 ),
                 // Text to display which name is celebrating name day for that day
+
                 Text(
-                  dayOfToday.internationalDay![savedLanguage].toString(),
+                  textAlign: TextAlign.center,
+                  dayOfToday.globalDay![savedLanguage].toString(),
                   style: AppTextStyles.labelHomePageText(context),
-                )
+                ),
+                if (dayOfToday.regionScope == "us") ...{
+                  Text(
+                    textAlign: TextAlign.center,
+                    AppLocalizations.of(context)!.globalHolidaysHomePageInfoTextUs,
+                    style: AppTextStyles.holidayInfoText(context),
+                  ),
+                  Icon(Icons.info)
+                } else ...{
+                  Text(
+                    textAlign: TextAlign.center,
+                    AppLocalizations.of(context)!.globalHolidaysHomePageInfoTextWw,
+                    style: AppTextStyles.holidayInfoText(context),
+                  ),
+                  Icon(Icons.info)
+                }
               ],
             ),
           );
@@ -101,7 +115,7 @@ class NameDayHomepageCard extends StatelessWidget {
                     dayOfToday.date.day.toString().padLeft(2, '0'),
                     dayOfToday.date.month.toString().padLeft(2, '0'),
                   ),
-                  style: AppTextStyles.middleHomePageText(context),
+                  style: AppTextStyles.middleHolidayText(context),
                 ),
                 // Text to display which name is celebrating name day for that day
                 Text(

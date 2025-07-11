@@ -116,6 +116,12 @@ abstract class AppLocalizations {
   /// **'Name Day'**
   String get nameDayHomePageTitle;
 
+  /// No description provided for @holidayHomePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Global Holiday'**
+  String get holidayHomePageTitle;
+
   /// No description provided for @nameDayHomePage.
   ///
   /// In en, this message translates to:
@@ -127,6 +133,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Today is {month}/{day}, and it\'s'**
   String globalHolidaysHomePage(Object day, Object month);
+
+  /// No description provided for @globalHolidaysHomePageInfoTextUs.
+  ///
+  /// In en, this message translates to:
+  /// **'(Primarily celebrated in the USA)'**
+  String get globalHolidaysHomePageInfoTextUs;
+
+  /// No description provided for @globalHolidaysHomePageInfoTextWw.
+  ///
+  /// In en, this message translates to:
+  /// **'(Widespread around the world)'**
+  String get globalHolidaysHomePageInfoTextWw;
 
   /// No description provided for @quoteHomePageTitle.
   ///
@@ -355,6 +373,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Name Days'**
   String get nameDayButtonNavigation;
+
+  /// No description provided for @globalHolidayButtonNavigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Holidays'**
+  String get globalHolidayButtonNavigation;
 
   /// No description provided for @quotesButtonNavigation.
   ///

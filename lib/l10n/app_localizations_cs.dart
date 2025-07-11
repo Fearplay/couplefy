@@ -18,6 +18,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get nameDayHomePageTitle => 'Svátek';
 
   @override
+  String get holidayHomePageTitle => 'Světový svátek';
+
+  @override
   String nameDayHomePage(Object day, Object month) {
     return 'Dnes je $day.$month. a svátek slaví';
   }
@@ -26,6 +29,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String globalHolidaysHomePage(Object day, Object month) {
     return 'Dnes je $day.$month. a slaví se';
   }
+
+  @override
+  String get globalHolidaysHomePageInfoTextUs => '(Rozšířený zejména v USA)';
+
+  @override
+  String get globalHolidaysHomePageInfoTextWw => '(Rozšířený po celém světě)';
 
   @override
   String get quoteHomePageTitle => 'Citát';
@@ -176,6 +185,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get nameDayButtonNavigation => 'Svátky';
+
+  @override
+  String get globalHolidayButtonNavigation => 'Svátky';
 
   @override
   String get quotesButtonNavigation => 'Citáty';

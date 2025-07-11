@@ -3,6 +3,7 @@
   "appName": "Love Counter",
   "loveCounterHomePageTitle": "Love Counter",
   "nameDayHomePageTitle": "Name Day",
+  "holidayHomePageTitle": "Global Holiday",
   "nameDayHomePage": "Today is {month}/{day}, and the name day is celebrated by",
   "@nameDayHomePage": {
     "placeholders": {
@@ -17,6 +18,8 @@
       "month": {}
     }
   },
+  "globalHolidaysHomePageInfoTextUs": "(Primarily celebrated in the USA)",
+  "globalHolidaysHomePageInfoTextWw": "(Widespread around the world)",
   "quoteHomePageTitle": "Quote",
   "homeTabName": "Home",
   "loveTabName": "Love Counter",
@@ -82,6 +85,7 @@
   "homeButtonNavigation": "Home",
   "loveButtonNavigation": "Love",
   "nameDayButtonNavigation": "Name Days",
+    "globalHolidayButtonNavigation": "Holidays",
   "quotesButtonNavigation": "Quotes",
   "settingsButtonNavigation": "Settings"
 }

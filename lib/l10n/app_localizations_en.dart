@@ -18,6 +18,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nameDayHomePageTitle => 'Name Day';
 
   @override
+  String get holidayHomePageTitle => 'Global Holiday';
+
+  @override
   String nameDayHomePage(Object day, Object month) {
     return 'Today is $month/$day, and the name day is celebrated by';
   }
@@ -26,6 +29,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String globalHolidaysHomePage(Object day, Object month) {
     return 'Today is $month/$day, and it\'s';
   }
+
+  @override
+  String get globalHolidaysHomePageInfoTextUs =>
+      '(Primarily celebrated in the USA)';
+
+  @override
+  String get globalHolidaysHomePageInfoTextWw =>
+      '(Widespread around the world)';
 
   @override
   String get quoteHomePageTitle => 'Quote';
@@ -172,6 +183,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get nameDayButtonNavigation => 'Name Days';
+
+  @override
+  String get globalHolidayButtonNavigation => 'Holidays';
 
   @override
   String get quotesButtonNavigation => 'Quotes';

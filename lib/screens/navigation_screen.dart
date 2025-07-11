@@ -1,3 +1,4 @@
+import 'package:couplefy/utils/shared_preferences_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/l10n/app_localizations.dart';
 
@@ -33,12 +34,21 @@ class NavigationScreen extends StatelessWidget {
             label: AppLocalizations.of(context)!.loveButtonNavigation,
             backgroundColor: Colors.purple,
           ),
-          // Navigation item representing the Name Day screen
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: AppLocalizations.of(context)!.nameDayButtonNavigation,
-            backgroundColor: Colors.purple,
-          ),
+          if (SharedPreferencesUtils.globalHolidays.value == true) ...{
+            // Navigation item representing the Holiday screen
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_today),
+              label: AppLocalizations.of(context)!.globalHolidayButtonNavigation,
+              backgroundColor: Colors.purple,
+            ),
+          } else ...{
+            // Navigation item representing the Name Day screen
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_today),
+              label: AppLocalizations.of(context)!.nameDayButtonNavigation,
+              backgroundColor: Colors.purple,
+            ),
+          },
           // Navigation item representing the Home screen
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

@@ -74,6 +74,16 @@ class AppTextStyles {
     );
   }
 
+  /// Returns the text style used for the middle texts in holiday card.
+  ///
+  /// The style includes:
+  /// - Font size of 22 for readability
+  static TextStyle middleHolidayText(BuildContext context) {
+    return const TextStyle(
+      fontSize: 22,
+    );
+  }
+
   /// Returns the text style used for the title in love screen.
   ///
   /// The style includes:
@@ -153,6 +163,16 @@ class AppTextStyles {
     return const TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.bold,
+    );
+  }
+
+  /// Returns the text style used for the info text in holiday card.
+  ///
+  /// The style includes:
+  /// - Font size of 18 for readability
+  static TextStyle holidayInfoText(BuildContext context) {
+    return const TextStyle(
+      fontSize: 18,
     );
   }
 
