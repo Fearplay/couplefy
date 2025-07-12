@@ -36,15 +36,21 @@ romantic milestones.
 * 🌓 **Light and Dark Mode** – Can be changed manually.
 
 ## Screenshots
-
-* ### Android
-
-<img src="assets/screenshots/android/android_screenshot_one.png" width="20%" height="20%" alt="Track your love story screenshot"> <img src="assets/screenshots/android/android_screenshot_two.png" width="20%" height="20%" alt="All in one view screenshot"> <img src="assets/screenshots/android/android_screenshot_three.png" width="20%" height="20%" alt="Get inspired screenshot"> <img src="assets/screenshots/android/android_screenshot_four.png" width="20%" height="20%" alt="Dark mode supported screenshot">
-<br>
-<br>
---
-* ### Ios
-<img src="assets/screenshots/ios/ios_screenshot_one.png" width="20%" height="20%" alt="Track your love story screenshot"> <img src="assets/screenshots/ios/ios_screenshot_two.png" width="20%" height="20%" alt="All in one view screenshot"> <img src="assets/screenshots/ios/ios_screenshot_three.png" width="20%" height="20%" alt="Get inspired screenshot"> <img src="assets/screenshots/ios/ios_screenshot_four.png" width="20%" height="20%" alt="Dark mode supported screenshot">
+<h3>Android</h3>
+<div style="display: flex; gap: 10px;">
+  <img src="assets/screenshots/android/android_screenshot_one.png" width="20%" alt="Track your love story screenshot">
+  <img src="assets/screenshots/android/android_screenshot_two.png" width="20%" alt="All in one view screenshot">
+  <img src="assets/screenshots/android/android_screenshot_three.png" width="20%" alt="Get inspired screenshot">
+  <img src="assets/screenshots/android/android_screenshot_four.png" width="20%" alt="Dark mode supported screenshot">
+</div>
+<hr>
+<h3>iOS</h3>
+<div style="display: flex; gap: 10px;">
+  <img src="assets/screenshots/ios/ios_screenshot_one.png" width="20%" alt="Track your love story screenshot">
+  <img src="assets/screenshots/ios/ios_screenshot_two.png" width="20%" alt="All in one view screenshot">
+  <img src="assets/screenshots/ios/ios_screenshot_three.png" width="20%" alt="Get inspired screenshot">
+  <img src="assets/screenshots/ios/ios_screenshot_four.png" width="20%" alt="Dark mode supported screenshot">
+</div>
 
 ## Localization
 
