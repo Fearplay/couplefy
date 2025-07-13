@@ -70,14 +70,12 @@ class DaysHomepageCard extends StatelessWidget {
                     AppLocalizations.of(context)!.globalHolidaysHomePageInfoTextUs,
                     style: AppTextStyles.holidayInfoText(context),
                   ),
-                  Icon(Icons.info)
                 } else ...{
                   Text(
                     textAlign: TextAlign.center,
                     AppLocalizations.of(context)!.globalHolidaysHomePageInfoTextWw,
                     style: AppTextStyles.holidayInfoText(context),
                   ),
-                  Icon(Icons.info)
                 }
               ],
             ),
