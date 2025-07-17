@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart';
 import 'package:couplefy/utils/shared_preferences_utils.dart';
 
 /// A widget that allows the user to pick and display an image from the gallery.
@@ -41,9 +43,14 @@ class _LoveCounterImagePickState extends State<LoveCounterImagePick> {
     if (image == null) return;
 
     final file = File(image.path);
-    await SharedPreferencesUtils.saveUserImagePath(file.path);
+
+    final appDir = await getApplicationDocumentsDirectory();
+    final fileName = path.basename(image.path);
+    final savedImage = await file.copy('${appDir.path}/$fileName');
+
+    await SharedPreferencesUtils.saveUserImagePath(savedImage.path);
     // Resize the image for better performance
-    _provider = ResizeImage(FileImage(file), width: 800, height: 800);
+    _provider = ResizeImage(FileImage(savedImage), width: 800, height: 800);
 
     if (!mounted) return;
     await precacheImage(_provider, context);
