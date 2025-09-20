@@ -31,12 +31,10 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get globalHolidaysHomePageInfoTextUs =>
-      '(Primarily celebrated in the USA)';
+  String get globalHolidaysHomePageInfoTextUs => '(Primarily celebrated in the USA)';
 
   @override
-  String get globalHolidaysHomePageInfoTextWw =>
-      '(Widespread around the world)';
+  String get globalHolidaysHomePageInfoTextWw => '(Widespread around the world)';
 
   @override
   String get quoteHomePageTitle => 'Quote';
