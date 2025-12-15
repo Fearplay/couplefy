@@ -44,7 +44,7 @@ class _InstagramPageRowState extends State<InstagramPageRow> {
         TextButton(
           onPressed: () => setState(() {
             _launchInBrowser(
-              // My URL on buymeacoffee.com
+              // My URL on instagram.com
               Uri.parse('https://www.instagram.com/indietapstudio/'),
             );
           }),
