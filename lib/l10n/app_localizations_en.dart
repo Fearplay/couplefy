@@ -174,6 +174,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get supportButton => 'Buy me a coffee';
 
   @override
+  String get instagramButton => 'Our Instagram';
+
+  @override
   String get homeButtonNavigation => 'Home';
 
   @override

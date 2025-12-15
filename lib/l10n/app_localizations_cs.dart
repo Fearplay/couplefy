@@ -178,6 +178,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get supportButton => 'Buy me a coffee';
 
   @override
+  String get instagramButton => 'Náš Instagram';
+
+  @override
   String get homeButtonNavigation => 'Domů';
 
   @override

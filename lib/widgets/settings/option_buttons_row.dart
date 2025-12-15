@@ -1,6 +1,7 @@
 import 'package:couplefy/l10n/app_localizations.dart';
 import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:couplefy/widgets/settings/options/global_holidays_switch.dart';
+import 'package:couplefy/widgets/settings/options/instagram_page_row.dart';
 import 'package:couplefy/widgets/settings/options/start_from_zero_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:couplefy/widgets/settings/options/about_app_row.dart';
@@ -55,6 +56,10 @@ class OptionButtonsRow extends StatelessWidget {
         ),
         // Language menu widget
         const LanguageMenu(),
+        const SizedBox(
+          height: 20,
+        ),
+        const InstagramPageRow(),
         const SizedBox(
           height: 20,
         ),
