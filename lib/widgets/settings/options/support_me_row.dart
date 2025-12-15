@@ -40,7 +40,7 @@ class _SupportMeRowState extends State<SupportMeRow> {
           onPressed: () => setState(() {
             _launchInBrowser(
               // My URL on buymeacoffee.com
-              Uri.parse('https://buymeacoffee.com/saulfearplay'),
+              Uri.parse('https://buymeacoffee.com/'),
             );
           }),
           style: AppButtonStyles.textButton(context),

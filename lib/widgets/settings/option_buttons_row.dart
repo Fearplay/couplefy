@@ -59,11 +59,6 @@ class OptionButtonsRow extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        // Support me widget
-        const SupportMeRow(),
-        const SizedBox(
-          height: 20,
-        ),
         // About App widget
         const AboutAppRow(),
       ],
