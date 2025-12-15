@@ -350,6 +350,12 @@ abstract class AppLocalizations {
   /// **'Buy me a coffee'**
   String get supportButton;
 
+  /// No description provided for @instagramButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Instagram'**
+  String get instagramButton;
+
   /// No description provided for @homeButtonNavigation.
   ///
   /// In en, this message translates to:

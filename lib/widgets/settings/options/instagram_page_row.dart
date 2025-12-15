@@ -2,18 +2,19 @@ import 'package:couplefy/l10n/app_localizations.dart';
 import 'package:couplefy/theme/app_button_styles.dart';
 import 'package:couplefy/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Widget which displays support me row.
-class SupportMeRow extends StatefulWidget {
-  /// Creates an instance of [SupportMeRow].
-  const SupportMeRow({super.key});
+class InstagramPageRow extends StatefulWidget {
+  /// Creates an instance of [InstagramPageRow].
+  const InstagramPageRow({super.key});
 
   @override
-  State<SupportMeRow> createState() => _SupportMeRowState();
+  State<InstagramPageRow> createState() => _InstagramPageRowState();
 }
 
-class _SupportMeRowState extends State<SupportMeRow> {
+class _InstagramPageRowState extends State<InstagramPageRow> {
   /// Launches the given [url] in the default external browser.
   ///
   /// Uses [launchUrl] with [LaunchMode.externalApplication] to open the link
@@ -36,16 +37,20 @@ class _SupportMeRowState extends State<SupportMeRow> {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        Icon(FontAwesomeIcons.instagram),
+        SizedBox(
+          width: 10,
+        ),
         TextButton(
           onPressed: () => setState(() {
             _launchInBrowser(
-              // My URL on buymeacoffee.com
-              Uri.parse('https://buymeacoffee.com/'),
+              // My URL on instagram.com
+              Uri.parse('https://www.instagram.com/indietapstudio/'),
             );
           }),
           style: AppButtonStyles.textButton(context),
           child: Text(
-            AppLocalizations.of(context)!.supportButton,
+            AppLocalizations.of(context)!.instagramButton,
             style: AppTextStyles.optionsText(context),
           ),
         ),

@@ -1567,6 +1567,7 @@ final List<DayEntryModel> dayEntries = [
     },
     regionScope: "ww",
   ),
+  //Den bez bot (ww)
   DayEntryModel(
     date: DateTime(2001, 5, 10),
     nameDays: {
@@ -1574,11 +1575,12 @@ final List<DayEntryModel> dayEntries = [
       "en": "Blažena",
     },
     globalDay: {
-      "cs": "Den bez bot",
-      "en": "Day Without Shoes",
+      "cs": "Den matek",
+      "en": "Mother’s Day",
     },
     regionScope: "ww",
   ),
+  //Den matek (ww)
   DayEntryModel(
     date: DateTime(2001, 5, 11),
     nameDays: {
@@ -1586,10 +1588,10 @@ final List<DayEntryModel> dayEntries = [
       "en": "Svatava",
     },
     globalDay: {
-      "cs": "Den matek",
-      "en": "Mother’s Day",
+      "cs": "Den bez diet",
+      "en": "Eat What You Want Day",
     },
-    regionScope: "ww",
+    regionScope: "us",
   ),
   DayEntryModel(
     date: DateTime(2001, 5, 12),
@@ -2002,7 +2004,8 @@ final List<DayEntryModel> dayEntries = [
     regionScope: "ww",
   ),
 
-  //Den větru
+  //Den větru (ww)
+  //Den otců (ww)
   DayEntryModel(
     date: DateTime(2001, 6, 15),
     nameDays: {
@@ -2010,8 +2013,8 @@ final List<DayEntryModel> dayEntries = [
       "en": "Vít/Vítek",
     },
     globalDay: {
-      "cs": "Den otců",
-      "en": "Father’s Day",
+      "cs": "Den větru",
+      "en": "Wind Day",
     },
     regionScope: "ww",
   ),
@@ -2075,6 +2078,7 @@ final List<DayEntryModel> dayEntries = [
     },
     regionScope: "ww",
   ),
+  //Den selfie (us)
   DayEntryModel(
     date: DateTime(2001, 6, 21),
     nameDays: {
@@ -2082,10 +2086,10 @@ final List<DayEntryModel> dayEntries = [
       "en": "Alois/Aloisie",
     },
     globalDay: {
-      "cs": "Den selfie",
-      "en": "Selfie Day",
+      "cs": "Den otců",
+      "en": "Father’s Day",
     },
-    regionScope: "us",
+    regionScope: "ww",
   ),
   DayEntryModel(
     date: DateTime(2001, 6, 22),
